@@ -19,7 +19,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-This is the test coontent for editing the website!!!
+I'm Daijun, and I am currently pursuing a Master's degree in Optical Engineering at Zhejiang University under the guidance of Prof. Jianjun He. Alongside my major, I have developed a keen interest in Machine Learning and Deep Learning. My current research focuses on the integration of Optics and AI. In the future, I am eager to pursue a Ph.D. degree in the field of AI, with a particular focus on areas such as Computer Vision, Natural Language Processing, and Explainable AI...
 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
