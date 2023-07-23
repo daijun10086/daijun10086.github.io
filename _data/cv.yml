@@ -2,18 +2,18 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Dai Jun
     - name: Date of Birth
-      value: 14th March 1879
+      value: 4th Feburary 1999
     - name: Languages
-      value: English, German
+      value: English, Chinese
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Master
+      institution: Zhejiang University
+      year: 2024
       description:
         - Description 1.
         - Description 2.
