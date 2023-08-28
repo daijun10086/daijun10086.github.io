@@ -27,13 +27,16 @@
     {
       "institution": "Zhejiang University",
       "url": "https://www.zju.edu.cn/english/",
-      "area": "Software Development",
+      "area": "Optics for AI, Computer Vision",
       "studyType": "Master",
       "startDate": "2021.09",
       "endDate": "2024.06",
       "score": "",
       "courses": [
-        "Theory of Relativity"
+        "UCB: CS61A",
+        "UCB: CS61B",
+        "Stanford: CS231N",
+        "Stanford: CS224N"
       ]
     }
   ],
