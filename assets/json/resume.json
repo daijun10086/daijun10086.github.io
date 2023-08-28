@@ -57,7 +57,19 @@
   "awards": [],
   "certificates": [],
   "publications": [],
-  "skills": [],
+  "skills": [
+    {
+      "Computer language": [
+        "Python",
+        "Java",
+        "Matlab"
+      ],
+      "Framework": [
+        "PyTorch",
+        "OpenCV"
+      ]
+    }
+  ],
   "languages": [
     {
       "language": "Chinese",
