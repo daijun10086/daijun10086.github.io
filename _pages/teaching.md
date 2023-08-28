@@ -7,5 +7,4 @@ nav: true
 nav_order: 5
 ---
 
-- classes: Teaching Assistant
-  TA:  2022Summer - Applied Optics Experiment Class
+- TA: 2022 Summer - Applied Optics Experiment Class
