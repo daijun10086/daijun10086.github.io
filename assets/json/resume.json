@@ -38,6 +38,20 @@
         "Stanford: CS231N",
         "Stanford: CS224N"
       ]
+    },
+    {
+      "institution": "Tianjin University",
+      "url": "https://www.zju.edu.cn/english/",
+      "area": "Opto-Electronics Information Science and Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2017.09",
+      "endDate": "2021.06",
+      "score": "",
+      "courses": [
+        "Geometry Optics",
+        "Wave Optics",
+        "Data Structure and Algorithm"
+      ]
     }
   ],
   "awards": [],
@@ -46,7 +60,7 @@
   "skills": [],
   "languages": [
     {
-      "language": "German",
+      "language": "Chinese",
       "fluency": "Native speaker"
     },
     {
