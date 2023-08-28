@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+Start to be a research intern in [Prof. Yiyi Liao's](https://yiyiliao.github.io/) lab, I will mainly focus on 3D Computer Vision.
