@@ -1,4 +1,197 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://daijun10086.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://daijun10086.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2023-08-28T14:45:39+00:00</updated><id>https://daijun10086.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">a post with bibliography</title><link href="https://daijun10086.github.io/blog/2023/post-bibliography/" rel="alternate" type="text/html" title="a post with bibliography"/><published>2023-07-12T13:56:00+00:00</published><updated>2023-07-12T13:56:00+00:00</updated><id>https://daijun10086.github.io/blog/2023/post-bibliography</id><content type="html" xml:base="https://daijun10086.github.io/blog/2023/post-bibliography/"><![CDATA[<p>This post shows how to add bibliography to simple blog posts. If you would like something more academic, check the <a href="/blog/2021/distill/">distill style post</a>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="bib"/><summary type="html"><![CDATA[an example of a blog post with bibliography]]></summary></entry><entry><title type="html">a post with jupyter notebook</title><link href="https://daijun10086.github.io/blog/2023/jupyter-notebook/" rel="alternate" type="text/html" title="a post with jupyter notebook"/><published>2023-07-04T12:57:00+00:00</published><updated>2023-07-04T12:57:00+00:00</updated><id>https://daijun10086.github.io/blog/2023/jupyter-notebook</id><content type="html" xml:base="https://daijun10086.github.io/blog/2023/jupyter-notebook/"><![CDATA[<p>To include a jupyter notebook in a post, you can use the following code:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::nomarkdown}
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://daijun10086.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://daijun10086.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2023-08-30T05:01:25+00:00</updated><id>https://daijun10086.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">Leetcode</title><link href="https://daijun10086.github.io/blog/2023/LeetCode/" rel="alternate" type="text/html" title="Leetcode"/><published>2023-08-30T00:00:00+00:00</published><updated>2023-08-30T00:00:00+00:00</updated><id>https://daijun10086.github.io/blog/2023/LeetCode</id><content type="html" xml:base="https://daijun10086.github.io/blog/2023/LeetCode/"><![CDATA[<h1 id="78-子集问题">78: <a href="https://leetcode.cn/problems/subsets/">子集问题</a></h1> <p>题目大意：给定元素互不重复的集合，编程得到其所有的子集，可以以任何顺序输出。例如给定集合$[1, 2, 3]$，输出的结果应该为: $[[], [1], [2], [3], [1, 2], [2, 3], [1, 3], [1, 2, 3]]$.</p> <p><strong>思路</strong>：对于这道题最开始是的思路是回溯，利用回溯算法来计算最终的子集输出，但是出现的问题是，输出没包括单元素的情况，原因可能是我设置的终止条件不对，我设置的终止条件是：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (idx == nums.length) {
+	ret.add(new ArrayList&lt;Integer&gt;(path));
+	return;
+}
+</code></pre></div></div> <p>这样的终止条件会导致输出没办法包括单独元素，因为必须要$idx == nums.legnth$. ![[Screenshot 2023-04-25 at 13.33.47.png]]</p> <p><strong>方法1：</strong> 采用位图法实现求取子集问题 一个有意思的结论是：一个大小为n的集合，其子集数量为$2^n$个，换一种思考角度来看即，集合中的每个元素都只有两种状态：在某个子集中，或者不在某个子集中。因此这就是一个组合的问题，其子集的可能有$2^n$种，那么我们可以很巧妙的利用二进制数的0 或者 1来表示某个元素在某个子集的情况，如下图所示： ![[Screenshot 2023-04-26 at 07.09.40.png]] 那么我们只需要两层循环就可以迭代遍历出所有的可能子集，外层循环，循环的是所有的二进制数，也即上图中的$0, 1, …, 7$，内层循环则负责查看每一位二进制数是否为一，为一则说明该位对应元素在该子集中。最终代码如下；</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class solution{
+	List&lt;Integer&gt; t = new ArrayList&lt;&gt;();
+	List&lt;List&lt;Integer&gt;&gt; ans = new ArrayList&lt;&gt;();
+
+	public List&lt;List&lt;Integer&gt;&gt; subsets(int[] nums) {
+		int n = nums.length;
+		for (int mask = 0; mask &lt; (1 &lt;&lt; n); ++mask) {
+			t.clear();
+			for (int i = 0; i &lt; n; ++i) {
+				if ((mask &amp; (1 &lt;&lt; i)) != 0) {
+					t.add(nums[i]);
+				}
+			}
+			ans.add(new ArrayList&lt;Integer&gt;(t));
+		}
+		return ans;
+	}
+}
+</code></pre></div></div> <hr/> <h1 id="445两数相加2">445.<a href="https://leetcode.cn/problems/add-two-numbers-ii/description/">两数相加2</a></h1> <p>这道题要求将通过链表表示的数，相加并且同样以链表的形式输出。显然最直观的方式就是，按照我们计算加法时的顺序，先低位再高位的顺序依次相加，并且要维护一个<code class="language-plaintext highlighter-rouge">carry</code>来记录进位的情况。所以第一个问题是，链表是高位在前低位在后的，而且链表不支持切片等操作，只能遍历至最后，所以我们要想办法反转链表的顺序关系，可以使用两种方式：</p> <ul> <li>栈</li> <li>反转链表，输出一个已经反转后的链表</li> </ul> <p>使用栈的方法，比较直观简单，见下面的代码，就是将链表的值依次放进栈中，并按照加法顺序求和，通过链表输出即可</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution {
+	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+		Deque&lt;Integer&gt; stack1 = new ArrayDeque&lt;&gt;();
+		Deque&lt;Integer&gt; stack2 = new ArrayDeque&lt;&gt;();
+
+		while (l1 != null) {
+			stack1.push(l1.val);
+			l1 = l1.next;
+		}
+		while (l2 != null) {
+			stack2.push(l2.val);
+			l2 = l2.next;
+		}
+		int carry = 0;
+		ListNode ans = null;
+		while (!stack1.isEmpty() || !stack2.isEmpty() || carry != 0) {
+			int d1 = stack1.isEmpty() ? 0 : stack1.pop();
+			int d2 = stack2.isEmpty() ? 0 : stack2.pop();
+			int sum = d1 + d2 + carry;
+			carry = sum / 10;
+			ListNode curNode = new ListNode(sum % 10);
+			curNode.next = ans;
+			ans = curNode;
+		}
+		return ans;
+	}
+}
+</code></pre></div></div> <p>这个记录贴主要想记录一下关于<strong>反转链表</strong>的模版</p> <hr/> <h1 id="2095-删除链表的中间节点">2095. 删除链表的中间节点</h1> <p>![[Screenshot 2023-07-22 at 22.47.50.png]]</p> <hr/> <h1 id="771宝石与石头">771.宝石与石头</h1> <p><a href="https://leetcode.cn/problems/jewels-and-stones/">LeetCode-771</a> <em>Time:</em> 2023.07.24</p> <p>这道题目的解法非常直观，直接暴力就可以AC，我第一遍也是采用暴力的方式的方法做的，但是看到题解区有大佬用了时间复杂度更低的解法，如果直接暴力的话时间复杂度应该是$O(mn)$，其中$m, n$分别是<code class="language-plaintext highlighter-rouge">jewels</code>和<code class="language-plaintext highlighter-rouge">stones</code>的长度。下面就学习一下大佬们的做法.</p> <p>首先是哈希集的做法，这种做法也比较直观，就是将<code class="language-plaintext highlighter-rouge">jewels</code>中的每个字符都放在哈希集中，利用哈希集来加速查找的过程，而不是像暴力做法中直接遍历。在Python3中很容易写出代码：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+def numJewelsInStones(self, jewels: str, stones: str) -&gt; int:
+	jewels_set = set(jewels)
+	return sum(s in jewels_set for s in stones)
+</code></pre></div></div> <p>还有一种来自灵神的解法，是利用位运算来进行的，但是我觉得从时间复杂度来说并没有什么提升，我觉得并不是那么喜欢，就不仔细研究了。</p> <hr/> <h1 id="104二叉树的最大深度">104.二叉树的最大深度</h1> <p><a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/?envType=study-plan-v2&amp;envId=leetcode-75">LeetCode.104</a> <em>Time:</em> 2023.07.24</p> <p>这道题也非常的简单，就是利用深度优先索索遍历整棵二叉树，同时维护一个最大深度。</p> <p>代码非常简单，二叉树的很多题目解法一般分为两种，即迭代和递归。但是我做了比较多的题目，现在思维习惯一来就想要模拟，脑子里面还没有形成不同题型归纳。对于这个题目代码非常简单，只需要递归地取两个子树中的最大深度就可以了。代码如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution: 
+	def maxDepth(self, root: Optional[TreeNode]) -&gt; int: 
+		if root is None: 
+			return 0 
+		return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left))
+</code></pre></div></div> <hr/> <h1 id="2208将数组和减半的最少操作次数">2208.将数组和减半的最少操作次数</h1> <p><a href="https://leetcode.cn/problems/minimum-operations-to-halve-array-sum/description/">LeetCode.2208</a> <em>Time:</em> 2023.07.25</p> <p>这道题非常容易想到贪心的思路，即每次总是将数组中最大的数减半，这样能最快减少数组和。因此如果使用暴力做法的话，我们只需要每次将数组排序，然后从中选取最大值并减半，直到减少的部分大于等于原数组和的一半时为止。但是暴力做法每次都需要重新对数组进行排序，时间复杂度为$O(n \cdot nlogn)$ ，其中$n$为给定数组的长度。</p> <p>但是其实我们非常容易想到，我们每次只关心最大值，而不关心剩下的部分，因此我们可以使用堆来维护最大值，这样可以有效降低时间复杂度，采用堆后时间复杂度会降低为$O(nlogn)$.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+	def halveArray(self, nums: List[int]) -&gt; int:
+		pq = []
+		for num in nums:
+			heappush(pq, -num)
+		ans = 0
+		sum1 = sum(nums)
+		sum2 = 0
+		while sum2 &lt; sum1 / 2:
+			x = -heappop(pq)
+			sum2 += x
+			ans += 1
+			heappush(pq, -x / 2)
+		return ans
+</code></pre></div></div> <hr/> <h1 id="2789合并后数组中的最大元素355场周赛q2">2789.合并后数组中的最大元素（355场周赛Q2）</h1> <p><a href="https://leetcode.cn/problems/largest-element-in-an-array-after-merge-operations/">LeetCode.2789</a> <em>Time:</em> 2023.07.25</p> <hr/> <h1 id="1513仅含1的子串数">1513.仅含1的子串数</h1> <p><a href="https://leetcode.cn/problems/number-of-substrings-with-only-1s/description/">LeetCode.1513</a> <em>Time:</em> 2023.07.26</p> <p>这道题的思路非常直观，我们只需要将给定的字符串中切割，得到全是1的字串就可以了，总子串数是这些独立的子串的长度$n$，计算公式为 \(Count = \frac{n \cdot (n + 1)}{2}\)</p> <p>那么任务就非常明确了，就是去统计字符串中有多少个这样的子串。</p> <p>可以利用<code class="language-plaintext highlighter-rouge">while</code>来写这个遍历的过程，代码如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+	def numSub(self, s: str) -&gt; int:
+		n = len(s)
+		i = 0
+		ans = 0
+		while i &lt; n:
+			if (i == 0 and s[i] == '1') or (i &gt; 0 and s[i] == '1' and s[i - 1] == '0'):
+				length = 1
+				i += 1
+				while i &lt; n and s[i] == '1':
+					length += 1
+					i += 1
+				ans += (length + 1) * length // 2
+			i += 1
+		ans %= (10 ** 9 + 7)
+		return ans
+</code></pre></div></div> <p>或者我们也可以使用<code class="language-plaintext highlighter-rouge">for</code>来完成遍历的任务，代码如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+	def numSub(self, s: str) -&gt; int:
+		total, consectuive = 0, 0
+		n = len(s)
+		for i in range(n):
+			if s[i] == '0':
+				total += (consecutive + 1) * consectuive // 2
+				consecutive = 0
+			else:
+				consecutive += 1
+		total += (consecutive + 1) * consecutive // 2
+		total %= (10 ** 9 + 7)
+		return total
+</code></pre></div></div> <p>这两个写法的差异在于，如果用<code class="language-plaintext highlighter-rouge">for</code>来写的话，因为其判定逻辑是每次遇到<code class="language-plaintext highlighter-rouge">'0'</code>才会更新结果，所以需要考虑最后以<code class="language-plaintext highlighter-rouge">'0'</code>结尾的情况，但是如果使用<code class="language-plaintext highlighter-rouge">while</code>来写没有这样的问题，但是其在判断计数开始过程会更加复杂点，其统计结果是在遍历完成或子段结束时完成的，所以不需要像<code class="language-plaintext highlighter-rouge">for</code>一样在最后加那行代码。</p> <hr/> <h1 id="2500删除每行中的最大值">2500.删除每行中的最大值</h1> <p><a href="https://leetcode.cn/problems/delete-greatest-value-in-each-row/description/">LeetCode.2500</a> <em>Time:</em> 2023.07.27</p> <p>对于这道题思路过于直观不需要分析太多，只需要将每行进行升序的排列，然后取每一列的最大值即可，利用Python3的一些性质可以大大简化代码，Python3代码如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+	def deleteGreatesValue(self, grid: List[List[int]]) -&gt; int:
+		for i in grid:
+			i.sort()
+		return sum([max(i) for i in zip(*grid)])
+</code></pre></div></div> <p>在这里简单介绍一下<code class="language-plaintext highlighter-rouge">zip(*)</code>的使用方法，<code class="language-plaintext highlighter-rouge">*</code> 的使用在Python3中一般充当着可变数量的参数的作用，比如如果 \(grid = [[1, 2, 4], [3, 3, 1]]\) 那么使用<code class="language-plaintext highlighter-rouge">zip(*grid)</code>等价于<code class="language-plaintext highlighter-rouge">zip([1, 2, 4], [3, 3, 1]</code>，其返回的结果是<code class="language-plaintext highlighter-rouge">[(1, 3), (2, 3), (4, 1)]</code>，从而达到了将<code class="language-plaintext highlighter-rouge">grid</code>进行转置的目的，因此我们可以总结出使用<code class="language-plaintext highlighter-rouge">zip(*grid)</code>可以快速将矩阵转置的结论。</p> <hr/> <h1 id="848字母移位">848.字母移位</h1> <p><a href="https://leetcode.cn/problems/shifting-letters/description/">LeetCode.848</a> <em>Time:</em> 2023.07.27</p> <hr/> <h1 id="141环形链表">141.环形链表</h1> <p><a href="https://leetcode.cn/problems/linked-list-cycle/description/">LeetCode.141</a> <em>Time:</em> 2023.07.29</p> <p>这道题是比较经典的环形链表的题目，用来判断链表中是否存在环形连接，对于这样的问题最简单暴力的方法就是在每一个节点处，用<code class="language-plaintext highlighter-rouge">while</code>循环来判断是否存在环形连接能够将节点重新移动回该节点，但是这样的时间复杂度是$O(n^{2})$，但是同样是这个过程我们也可以用哈希表的方式来提高其算法复杂度，其代码非常简单</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+	def hasCycle(self, head: Optional[ListNode]) -&gt; bool:
+		seen = set()
+		while head:
+			if head in seen():
+				return True
+			seen.add(head)
+			head = head.next
+		return True
+</code></pre></div></div> <p>但是对于这道题目，让我想记录这道题的做题记录的主要原因是这是一道比较经典快慢指针的题目，如何判断是否存在环形连接，快慢指针的想法非常朴素，就是我们维护两个指针，两个指针一快一慢，如果存在环形连接，那么快指针一定可以追上慢指针。因此，我们只需要维护两个指针即可解决问题，代码如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+	def hasCycle(self, head: Optional[ListNode]) -&gt; bool:
+		if not head or not head.next:
+			return False
+		slow = head
+		fast = head.next
+		while slow != fast:
+			if not fast or not fast.next:
+				return False
+			slow = slow.next
+			fast = fast.next.next
+		return True
+</code></pre></div></div> <p>这个解法的代码中有一个值得注意的点是，<code class="language-plaintext highlighter-rouge">while</code>的循环结束条件是<code class="language-plaintext highlighter-rouge">slow == fast</code>，这是默认了存在环形连接的情况，加入不存在环形连接，那么这样的方式最终可能会导致两种可能的情况：</p> <ul> <li><code class="language-plaintext highlighter-rouge">fast</code>指针，刚好能够到达链表的尾节点</li> <li><code class="language-plaintext highlighter-rouge">fast</code>指针，能够到达尾节点前一个节点</li> </ul> <p>针对这两种情况，所以我们才在<code class="language-plaintext highlighter-rouge">while</code>循环中，使用<code class="language-plaintext highlighter-rouge">if</code>来进行判定，就是为了应对这两种情况，如果<code class="language-plaintext highlighter-rouge">fast</code>指针，最终指向尾节点，那么<code class="language-plaintext highlighter-rouge">fast.next == null</code>因此会直接返回<code class="language-plaintext highlighter-rouge">False</code>；当<code class="language-plaintext highlighter-rouge">fast</code>指针指向倒数第二个节点，下一次<code class="language-plaintext highlighter-rouge">fast</code>将会指向<code class="language-plaintext highlighter-rouge">null</code>，这样就会导致另一个判别条件<code class="language-plaintext highlighter-rouge">not fast</code>触发，也会直接返回<code class="language-plaintext highlighter-rouge">False</code>。</p> <hr/> <h1 id="142-环形链表ii">142. 环形链表II</h1> <p><a href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">LeetCode.142</a> <em>Time:</em> 2023.08.04</p> <p>这道题目，是建立在141.环形链表的基础之上的，141只要求我们检查是否存在环形连接，而142布景要求我们检查是否存在环形连接，同时还需要找到环形链接的开始的节点，在141中，我们已经学习过了利用快慢指针可以检查是否存在环形连接，但是仅仅利用141的代码是没有办法找到环形连接开始的节点的，当然我们还是可以利用暴力的方法来完成，我们将没见过的节点都放进一个哈希表中，当我们第一次遇见重复的（即哈希表中已存在的）节点，我们只需要返回该节点即可，这种暴力做法的时间复杂度为$O(n)$，其中$n$为链表的长度。代码如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Solution:
+	public ListNode detectCycle(ListNode head) {
+		ListNode pos = head;
+		Set&lt;ListNode&gt; visited = new HashSet&lt;ListNode&gt;();
+		while (pos != null) {
+			if (visited.contains(pos)) {
+				return pos;
+			} else {
+				visited.add(pos);
+			}
+			pos = pos.next;
+		}
+		return null;
+	}
+}
+</code></pre></div></div> <p>建立在141的基础之上，我们可以通过数学得到一些结论，首先假设从链表的头节点到环形节点入口的距离为<code class="language-plaintext highlighter-rouge">a</code>，环形链表的长度为<code class="language-plaintext highlighter-rouge">b</code>，那么我们很容易得到两个结论：</p> <ul> <li>快指针<code class="language-plaintext highlighter-rouge">fast</code>前进的距离$f=$慢指针<code class="language-plaintext highlighter-rouge">slow</code>前进的距离$2\cdot s$；</li> <li>同时$f=s + nb$</li> </ul> <p>根据这两个结论不难推导出，$s = nb$，此时我们只需要找到环形连接开始的节点即可，此时我们可以将快指针重新定位为头节点的位置，同时此时快慢指针移动速度一样那么当快指针移动到头节点时，慢节点移动距离为$s=nb+a$也会恰好移动到环形节点头部，也就是快慢指针会相遇，我们就可以使用这样的方式来找到环形连接头节点的位置，但是这样的做法并不能降低时间复杂度，但是可以减小空间复杂度，将空间复杂度降低到$O(1)$，具体代码如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+	def detectCycle(self, head):
+		fast, slow = head, head
+		while True:
+			if not (fast and fast.next): return
+			fast, slow = fast.next.next, slow.next
+			if fast == slow: break
+		fast = head
+		while fast != slow:
+			fast, slow = fast.next, slow.next
+		return fast
+</code></pre></div></div> <hr/> <h1 id="24-两两交换链表中的节点">24 两两交换链表中的节点</h1> <p><a href="https://leetcode.cn/problems/swap-nodes-in-pairs/description/">LeetCode.24</a> <em>Time:</em> 2023.08.06</p> <p>这道题用递归的思路其实并不难，但是其实我思考了半天的是迭代的解法，官方题解中对于迭代的解法是利用哑节点的方法来做的，也就是在头节点<code class="language-plaintext highlighter-rouge">head</code>前额外增加一个<code class="language-plaintext highlighter-rouge">dummyNode</code>。然后不断地迭代去交换<code class="language-plaintext highlighter-rouge">temp</code>节点，即当前处理节点的后两个节点，执行的终止条件是直到<code class="language-plaintext highlighter-rouge">temp</code>节点后不足两个自节点，这个思路非常的直观，代码如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+	def swapPairs(self, head):
+		dummyHead = ListNode(0)
+		dummyHead.next = head
+		temp = dummyHead
+		while temp.next and temp.next.next:
+			node1 = temp.next
+			node2 = temp.next.next
+			temp.next = node2
+			node1.next = node2.next
+			node2.next = node1
+			temp = node1
+		return dummyHead.next
+</code></pre></div></div> <p>但是让我非常感兴趣的是，其实这个过程我们如果不增加<code class="language-plaintext highlighter-rouge">dummyHead</code>，其实也完全可以做到，无非就是：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node1.next = node2.next
+node2.next = node1
+</code></pre></div></div> <p>这样便可以交换两个节点的顺序，看似也是可以迭代的，所以我非常好奇<code class="language-plaintext highlighter-rouge">dummyHead</code>的引入究竟带来了什么好处，又或者说其是否是可选的，还是说没有<code class="language-plaintext highlighter-rouge">dummyHead</code>的引入这个思路就完不成呢？</p> <p>那么我们来对比一下当我们不加入<code class="language-plaintext highlighter-rouge">dummyHead</code>时会发生什么，我们还是参考上面的迭代的思路，那么我们每次迭代过程中会交换相邻两个节点的顺序，也就是如上面的代码一样，那么我们需要设置循环的终止条件，同样参考题解的思路，但是这时候我们就会发现问题，在循环体里面我们可以写</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># exchange two nodes
+node1.next = node2.next
+node2.next = node1
+node1 = node1.next
+node2 = node1.next.next
+</code></pre></div></div> <p>但是由于这个时候没有<code class="language-plaintext highlighter-rouge">dummyHead</code>和<code class="language-plaintext highlighter-rouge">temp</code>节点，我们在设置循环终止条件时就只能设置</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while node1 and node1.next:
+</code></pre></div></div> <p>当我们复制了同样的<code class="language-plaintext highlighter-rouge">node1</code>作为<code class="language-plaintext highlighter-rouge">temp</code>节点后，我们的循环终止条件设置为：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while temp and temp.next:
+</code></pre></div></div> <p>但是随之而来的一个最重要的问题，也是我认为设置<code class="language-plaintext highlighter-rouge">dummyHead</code>最重要的原因，设置了哑节点后我们会发现，每次迭代虽然交换了两个节点，但是其实会涉及到三个节点，这样做的好处就是，我们可以使得已经交换位置后的节点最开始连接着未交换位置的两个节点，但是由于它涉及三个节点，也就是它还保存着前一个节点，这样方便我们连接上交换位置后的两个节点；反之如果我们如果不设置哑节点，那么每次只会涉及两个节点，那么交换后的节点与前一个节点还是会以错误的连接方式连接着，具体可以看下面的截图所展示的： ![[Screenshot 2023-08-06 at 08.52.11.png]]</p> <p>![[Screenshot 2023-08-06 at 08.52.31.png]] 这个结果就体现了，交换后的3和4节点，确实已经交换了，但是前一个节点只连接着3节点，所以才会造成这样的结果，这个结果也反向说明了，我们需要至少三个节点的参与才能顺利解决这个问题。</p> <hr/> <h1 id="437-路径总和iii">437 路径总和III</h1> <p><a href="https://leetcode.cn/problems/path-sum-iii/description/?envType=study-plan-v2&amp;envId=leetcode-75">LeetCode.437</a> <em>Time:</em> 2023.08.07</p> <p>这道题我最初是能想到暴力遍历的，从每个节点开始都搜索一遍观察是否存在符合路径总和的节点，就将结果加一返回。我最大的问题是，我总是不熟悉怎么写深度优先搜索和广度优先搜索的返回方式，即在搜索遍历中不断被修改的数据如何能够能最终返回到需要的地方。那么首先记录一下暴力的做法，暴力的做法就如我刚才所说的，就是对每一个节点都以其为起始节点去观察是否存在符合题意的路径，编写辅助函数如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def rootSum(root, targetSum):
+	if not root:
+		return 0
+	ret = 0
+	if root.val == tagretSum:
+		ret += 1
+	ret += rootSum(rot.left, targetSum - root.val)
+	ret += rootSUm(root.right, targetSum - root.val)
+	return ret
+</code></pre></div></div> <p>这个辅助函数的编写逻辑非常简单，我们每次都以某一个节点为起始节点，不断向下地搜索，但是需要注意的是，这里的参数<code class="language-plaintext highlighter-rouge">targetSum</code>和题目给定的函数的参数中的<code class="language-plaintext highlighter-rouge">targetSum</code>意义其实并不完全相同，题目中的参数是对于要求的路径和的指定，但是辅助函数中的参数，代表着时我们总是假设在当前节点能够符合路径和时，对于当前节点我们希望的节点值，而且此时全是以最初给定的<code class="language-plaintext highlighter-rouge">root</code>为起始点的。正是由于这个差异，在题目的函数中我们不能仅仅：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ret = rootSum(root, targetSum)
+</code></pre></div></div> <p>因为这样会导致我们只搜索了以根节点为起始节点的搜索结果，我们忽略了以其他节点为起始节点的路径，完整代码如下：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+	def pathSum(root, targetSum):
+		if not root:
+			return 0
+		ret = rootSum(root, targetSum)
+		ret += self.pathSum(root.left, targetSum)
+		ret += self.pathSum(root.right, targetSum)
+		return ret
+</code></pre></div></div> <hr/> <h1 id="849到最近的人的最大距离">849.到最近的人的最大距离</h1> <p><a href="https://leetcode.cn/problems/maximize-distance-to-closest-person/description/">LeetCode.849</a> <em>Time:</em> 2023.08.22 <em>Keyword:</em> 双指针</p>]]></content><author><name></name></author><summary type="html"><![CDATA[78: 子集问题]]></summary></entry><entry><title type="html">a post with bibliography</title><link href="https://daijun10086.github.io/blog/2023/post-bibliography/" rel="alternate" type="text/html" title="a post with bibliography"/><published>2023-07-12T13:56:00+00:00</published><updated>2023-07-12T13:56:00+00:00</updated><id>https://daijun10086.github.io/blog/2023/post-bibliography</id><content type="html" xml:base="https://daijun10086.github.io/blog/2023/post-bibliography/"><![CDATA[<p>This post shows how to add bibliography to simple blog posts. If you would like something more academic, check the <a href="/blog/2021/distill/">distill style post</a>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="bib"/><summary type="html"><![CDATA[an example of a blog post with bibliography]]></summary></entry><entry><title type="html">a post with jupyter notebook</title><link href="https://daijun10086.github.io/blog/2023/jupyter-notebook/" rel="alternate" type="text/html" title="a post with jupyter notebook"/><published>2023-07-04T12:57:00+00:00</published><updated>2023-07-04T12:57:00+00:00</updated><id>https://daijun10086.github.io/blog/2023/jupyter-notebook</id><content type="html" xml:base="https://daijun10086.github.io/blog/2023/jupyter-notebook/"><![CDATA[<p>To include a jupyter notebook in a post, you can use the following code:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::nomarkdown}
 {% assign jupyter_path = "assets/jupyter/blog.ipynb" | relative_url %}
 {% capture notebook_exists %}{% file_exists assets/jupyter/blog.ipynb %}{% endcapture %}
 {% if notebook_exists == "true" %}
@@ -102,4 +295,4 @@
 <span class="nt">&lt;/table&gt;</span>
 </code></pre></div></div> <table data-click-to-select="true" data-height="460" data-pagination="true" data-search="true" data-toggle="table" data-url="/assets/json/table_data.json"> <thead> <tr> <th data-checkbox="true"></th> <th data-field="id" data-halign="left" data-align="center" data-sortable="true">ID</th> <th data-field="name" data-halign="center" data-align="right" data-sortable="true">Item Name</th> <th data-field="price" data-halign="right" data-align="left" data-sortable="true">Item Price</th> </tr> </thead> </table>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="tables"/><summary type="html"><![CDATA[an example of how to use Bootstrap Tables]]></summary></entry><entry><title type="html">a post with table of contents</title><link href="https://daijun10086.github.io/blog/2023/table-of-contents/" rel="alternate" type="text/html" title="a post with table of contents"/><published>2023-03-20T15:59:00+00:00</published><updated>2023-03-20T15:59:00+00:00</updated><id>https://daijun10086.github.io/blog/2023/table-of-contents</id><content type="html" xml:base="https://daijun10086.github.io/blog/2023/table-of-contents/"><![CDATA[<p>This post shows how to add a table of contents in the beginning of the post.</p> <h2 id="adding-a-table-of-contents">Adding a Table of Contents</h2> <p>To add a table of contents to a post, simply add</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">toc</span><span class="pi">:</span>
   <span class="na">beginning</span><span class="pi">:</span> <span class="kc">true</span>
-</code></pre></div></div> <p>to the front matter of the post. The table of contents will be automatically generated from the headings in the post.</p> <h3 id="example-of-sub-heading-1">Example of Sub-Heading 1</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h3 id="example-of-another-sub-heading-1">Example of another Sub-Heading 1</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h2 id="table-of-contents-options">Table of Contents Options</h2> <p>If you want to learn more about how to customize the table of contents, you can check the <a href="https://github.com/toshimaru/jekyll-toc">jekyll-toc</a> repository.</p> <h3 id="example-of-sub-heading-2">Example of Sub-Heading 2</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h3 id="example-of-another-sub-heading-2">Example of another Sub-Heading 2</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="toc"/><summary type="html"><![CDATA[an example of a blog post with table of contents]]></summary></entry><entry><title type="html">a post with giscus comments</title><link href="https://daijun10086.github.io/blog/2022/giscus-comments/" rel="alternate" type="text/html" title="a post with giscus comments"/><published>2022-12-10T15:59:00+00:00</published><updated>2022-12-10T15:59:00+00:00</updated><id>https://daijun10086.github.io/blog/2022/giscus-comments</id><content type="html" xml:base="https://daijun10086.github.io/blog/2022/giscus-comments/"><![CDATA[<p>This post shows how to add GISCUS comments.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="external-services"/><category term="comments"/><summary type="html"><![CDATA[an example of a blog post with giscus comments]]></summary></entry><entry><title type="html">Displaying External Posts on Your al-folio Blog</title><link href="https://daijun10086.github.io/blog/2022/displaying-external-posts-on-your-al-folio-blog/" rel="alternate" type="text/html" title="Displaying External Posts on Your al-folio Blog"/><published>2022-04-23T23:20:09+00:00</published><updated>2022-04-23T23:20:09+00:00</updated><id>https://daijun10086.github.io/blog/2022/displaying-external-posts-on-your-al-folio-blog</id><content type="html" xml:base="https://daijun10086.github.io/blog/2022/displaying-external-posts-on-your-al-folio-blog/"><![CDATA[]]></content><author><name></name></author></entry></feed>
+</code></pre></div></div> <p>to the front matter of the post. The table of contents will be automatically generated from the headings in the post.</p> <h3 id="example-of-sub-heading-1">Example of Sub-Heading 1</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h3 id="example-of-another-sub-heading-1">Example of another Sub-Heading 1</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h2 id="table-of-contents-options">Table of Contents Options</h2> <p>If you want to learn more about how to customize the table of contents, you can check the <a href="https://github.com/toshimaru/jekyll-toc">jekyll-toc</a> repository.</p> <h3 id="example-of-sub-heading-2">Example of Sub-Heading 2</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h3 id="example-of-another-sub-heading-2">Example of another Sub-Heading 2</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="toc"/><summary type="html"><![CDATA[an example of a blog post with table of contents]]></summary></entry><entry><title type="html">a post with giscus comments</title><link href="https://daijun10086.github.io/blog/2022/giscus-comments/" rel="alternate" type="text/html" title="a post with giscus comments"/><published>2022-12-10T15:59:00+00:00</published><updated>2022-12-10T15:59:00+00:00</updated><id>https://daijun10086.github.io/blog/2022/giscus-comments</id><content type="html" xml:base="https://daijun10086.github.io/blog/2022/giscus-comments/"><![CDATA[<p>This post shows how to add GISCUS comments.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="external-services"/><category term="comments"/><summary type="html"><![CDATA[an example of a blog post with giscus comments]]></summary></entry></feed>
