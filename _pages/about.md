@@ -1,7 +1,7 @@
 ---
 layout: about
 title: about
-permalink: jundai332@gmail.com
+permalink: /
 subtitle: <a href='#'>Zhejiang University, Optical Engineering</a>.
 
 profile:
