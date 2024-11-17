@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Zhejiang University, Optical Engineering | Shanghai AI Lab, OpenImaging Lab</a>.
+subtitle: <a href='http://opt.zju.edu.cn/opten/'> Zhejiang University, Optical Engineering</a> | <a href='https://github.com/OpenImagingLab'> Shanghai AI Lab, OpenImaging Lab</a>.
 
 profile:
   align: right
