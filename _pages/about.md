@@ -24,7 +24,7 @@ Hi! I'm Daijun, and I recently graduated Zhejiang University under the guidance 
 
 <div style="text-align: center; margin-top: 20px;">
   <a href="https://daijun10086.github.io/">Research Statement</a> | 
-  <a href="https://daijun10086.github.io/">My Cat</a> |
+  <a href="https://photos.google.com/album/AF1QipPS-2Fq-DdT9TzQ9WCOEZl7ysKEb79QU6fNj2jV">My Cute Cat</a> |
   <a href="https://www.zhihu.com/people/dddddddaijun">Zhihu</a>
 </div>
 
