@@ -62,15 +62,19 @@
       "name": "Programming",
       "keywords": [
         "Python",
+        "C++",
+        "Julia",
         "Java",
         "Matlab"
       ]
     },
     {
-      "name": "Frameworks",
+      "name": "Frameworks and 3D Softwares",
       "keywords": [
         "PyTorch",
-        "OpenCV"
+        "OpenCV",
+        "NeRFstudio",
+        "Blender"
       ]
     }
   ],
