@@ -23,7 +23,8 @@ social: true  # includes social icons at the bottom of the page
 Hi! I'm Daijun, and I recently graduated Zhejiang University under the guidance of [Prof. Jianjun He](https://mypage.zju.edu.cn/JianjunHe#0). Now I am doingm my gap year research in [Shanghai AI Lab](https://www.shlab.org.cn/) working with [Prof. Tianfan Xue](https://tianfan.info/), [Porf. Jinwei Gu](https://www.gujinwei.org/) and [Dr. Shi Guo](https://scholar.google.com/citations?user=5hsEmuQAAAAJ&hl=en&oi=ao), focusing on Computational Vision. Before that I am fortunated to be supervised by [Prof. Yiyi Liao](https://yiyiliao.github.io/), woking for Text/Image-to-3D. My cmain research interests focuses on the 1. 3D Vision, ultimate goal is reconstructing a more realistic virtual world; 2. Computational Photography, make "fake" images more "real" by computational methods like captured by daily-life cameras; 3. Computational Imaging / Optics, co-design imaging systems for better vision. In the future, I am eager to pursue a Ph.D. degree for building [Metaverse](https://en.wikipedia.org/wiki/Metaverse#:~:text=The%20metaverse%20is%20a%20loosely,on%20social%20and%20economic%20connection.), for that I may focus on 3D Reconstruction/Generation/Percetion... 
 
 <div style="text-align: center; margin-top: 20px;">
-  <a href="https://daijun10086.github.io/">Research Statement</a> | 
+  <a href="https://daijun10086.github.io/">Research Statement</a> |
+  <a href="https://drive.google.com/drive/folders/1v2VKHOul31fJTmYqusRqcAo7dW9t91iG?usp=sharing">Presentations</a> |
   <a href="https://photos.google.com/album/AF1QipPS-2Fq-DdT9TzQ9WCOEZl7ysKEb79QU6fNj2jV">My Cute Cat</a> |
   <a href="https://www.zhihu.com/people/dddddddaijun">Zhihu</a>
 </div>
