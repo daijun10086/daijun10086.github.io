@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Finally submitted my CVPR paper, hope a good result! Also, I have submitted most of my applications for Ph.D programs, I am looking forward to next stop!
+Finally submitted my CVPR paper, hope a good result! Also, I have submitted most of my applications for Ph.D programs, I am looking forward to the next stop!
