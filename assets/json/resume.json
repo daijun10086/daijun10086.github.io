@@ -59,12 +59,16 @@
   "publications": [],
   "skills": [
     {
-      "Computer language": [
+      "name": "Programming",
+      "keywords": [
         "Python",
         "Java",
         "Matlab"
-      ],
-      "Framework": [
+      ]
+    },
+    {
+      "name": "Frameworks",
+      "keywords": [
         "PyTorch",
         "OpenCV"
       ]
