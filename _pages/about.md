@@ -9,9 +9,8 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>Yuquan Campus</p>
-    <p>Zhejiang University</p>
-    <p>Hangzhou, Zhejiang</p>
+    <p>Hu Qiu, Suzhou</p>
+    <p>Shooted by my girlfriend, Xiaoxuan Yang</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
