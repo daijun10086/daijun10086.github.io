@@ -1,18 +1,18 @@
 ---
 layout: distill  # or 'post' for a simpler layout
-title: Your Post Title
-description: A brief description of your post
-date: YYYY-MM-DD
-tags: ["Tag1", "Tag2"]  # Choose from tags defined in _config.yml display_tags
+title: Structure from Motion Tutorial
+description: Tutorial for some underlying concepts and math of Structure from Motion.
+date: 2025-02-10
+tags: ["Structure from Motion"]  # Choose from tags defined in _config.yml display_tags
 giscus_comments: true  # Enable comments
 featured: false  # Set to true to feature on homepage
 
 # Optional fields:
 authors:  # For distill layout
-  - name: Your Name
-    url: "https://your-url.com"
+  - name: Daijun Zhu
+    url: "https://daijun10086.github.io/"
     affiliations:
-      name: Your Affiliation
+      name: Shanghai AI Lab, OpenImaging Lab
 
 bibliography: references.bib  # If you have citations
 toc:  # Optional table of contents
