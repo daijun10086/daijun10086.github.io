@@ -1,6 +1,6 @@
 ---
 layout: distill  # or 'post' for a simpler layout
-title: Structure from Motion Tutorial
+title: Structure-from-Motion Tutorial
 description: Tutorial for some underlying concepts and math of Structure from Motion.
 date: 2025-02-10
 tags: ["Structure from Motion"]  # Choose from tags defined in _config.yml display_tags
