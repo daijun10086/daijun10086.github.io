@@ -32,3 +32,23 @@
 "Planck":
   - firstname: ["Max"]
     url: https://en.wikipedia.org/wiki/Max_Planck
+
+"Chen":
+  - firstname: ["Liqun"]
+    url: https://github.com/xjcclq
+
+"Yang":
+  - firstname: ["Xinge"]
+    url: https://singer-yang.github.io/
+
+"Hu":
+  - firstname: ["Yuyao"]
+    url: https://orcid.org/0000-0003-0261-8878
+
+"Gu":
+  - firstname: ["Jinwei"]
+    url: https://www.gujinwei.org/
+
+"Xue":
+  - firstname: ["Tianfan"]
+    url: https://tianfan.info/

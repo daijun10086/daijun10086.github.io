@@ -272,7 +272,6 @@ display_categories: [] # these categories will be displayed on the front page of
 # -----------------------------------------------------------------------------
 
 scholar:
-
   last_name: [Dai]
   first_name: [Jun]
 
