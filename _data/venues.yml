@@ -4,3 +4,19 @@
 
 "PhysRev":
   url: https://journals.aps.org/
+
+"Appl. Opt.":
+  url: https://opg.optica.org/ao/home.cfm
+  color: "#0F52BA"
+
+"SPIE. Photonics Asia 2023":
+  url: https://spie.org/conferences-and-exhibitions/photonics-asia
+  color: "#B31B1B"
+
+"Laser & Photonics Reviews":
+  url: https://onlinelibrary.wiley.com/journal/18638899
+  color: "#00369f"
+
+"arXiv":
+  url: https://arxiv.org
+  color: "#B31B1B"
