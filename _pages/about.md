@@ -24,7 +24,7 @@ Hi! I'm Jun Dai, an incoming Ph.D student of [University of Rochester](https://w
 Generally, I'm passionate about Meaningful Vision Problems, if you want to talk with me, don't hesitate to shot me an email!
 
 <div style="text-align: center; margin-top: 20px;">
-  <a href="https://daijun10086.github.io/">Research Statement</a> |
+  <a href="https://www.notion.so/A-Naive-Research-Start-Point-1f795dabd626804bb2f7c1b276dbe6c0?pvs=4">Research Statement</a> |
   <a href="https://drive.google.com/drive/folders/1v2VKHOul31fJTmYqusRqcAo7dW9t91iG?usp=sharing">Presentations</a> |
   <a href="https://photos.google.com/album/AF1QipPS-2Fq-DdT9TzQ9WCOEZl7ysKEb79QU6fNj2jV">My Cute Cat</a> |
   <a href="https://drive.google.com/drive/folders/1Sn6mTMZyfof9l3zFFSHkIK4G9opWy1E0?usp=sharing">Research Treasure</a>
