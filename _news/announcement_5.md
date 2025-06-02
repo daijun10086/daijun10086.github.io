@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I will join [Horizon Lab @URCS](https://horizon-lab.org/) and work with [Prof. Yuhao Zhu](https://yuhaozhu.com/) and other amazing people! Let's see what will we bring into the Computer Vision community!
+I will join [Horizon Lab @URCS](https://horizon-lab.org/) and work with [Prof. Yuhao Zhu](https://yuhaozhu.com/) and other amazing people! Let's see what we will bring into the Computer Vision/Photography community!
