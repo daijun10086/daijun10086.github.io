@@ -19,7 +19,11 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 ### Short Bio
-Hi! I'm Jun Dai, an incoming Ph.D student of [University of Rochester](https://www.rochester.edu/). Now I am doing my gap year in [Shanghai AI Lab](https://www.shlab.org.cn/) working with [Prof. Tianfan Xue](https://tianfan.info/), [Porf. Jinwei Gu](https://www.gujinwei.org/), [Dr. Shi Guo](https://scholar.google.com/citations?user=5hsEmuQAAAAJ&hl=en&oi=ao) and all amzing people in [OpenImaging Lab](https://github.com/OpenImagingLab), focusing on Computer Vision and Computational Photography/Imaging. Before that I am fortunated to be supervised by [Prof. Yiyi Liao](https://yiyiliao.github.io/), woking for Text/Image-to-3D. My main research interests focuses on the 1. 3D Vision, ultimate goal is reconstructing a more realistic virtual world; 2. Computational Photography, make "fake" images more "real" by computational methods like captured by daily-life cameras; 3. Computational Imaging / Optics, co-design imaging systems for better vision and make invisible visible. In the future, I am eager to pursue a Ph.D. degree for building [Metaverse](https://en.wikipedia.org/wiki/Metaverse#:~:text=The%20metaverse%20is%20a%20loosely,on%20social%20and%20economic%20connection.), for that I may focus on 3D Reconstruction/Generation/Percetion... 
+Hi! I'm Jun Dai, an incoming Ph.D student of [University of Rochester](https://www.rochester.edu/). Now I am working with [Prof. Tianfan Xue](https://tianfan.info/), [Porf. Jinwei Gu](https://www.gujinwei.org/), [Dr. Shi Guo](https://scholar.google.com/citations?user=5hsEmuQAAAAJ&hl=en&oi=ao) and all amzing people in [OpenImaging Lab](https://github.com/OpenImagingLab), focusing on Computational Photography/Imaging. My main research interests focuses on the 1. 3D Vision, ultimate goal is reconstructing a more realistic virtual world; 2. Computational Photography, trying to synthesis and capture better photograph; 3. Computational Imaging / Optics, co-design imaging systems for better vision and make invisible visible. More specific:
+
+- 3D Reconstruction and Generation;
+- Neural Rendering
+- Deep Generative Models
 
 Generally, I'm passionate about Meaningful Vision Problems, if you want to talk with me, don't hesitate to shot me an email!
 
