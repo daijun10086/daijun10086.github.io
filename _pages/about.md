@@ -19,7 +19,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 ### Short Bio
-Hi! I'm Jun Dai, an incoming Ph.D student of [University of Rochester](https://www.rochester.edu/). Now I am working with [Prof. Tianfan Xue](https://tianfan.info/), [Porf. Jinwei Gu](https://www.gujinwei.org/), [Dr. Shi Guo](https://scholar.google.com/citations?user=5hsEmuQAAAAJ&hl=en&oi=ao) and all amzing people in [OpenImaging Lab](https://github.com/OpenImagingLab), focusing on Computational Photography/Imaging. My main research interests focuses on the 1. 3D Vision, ultimate goal is reconstructing a more realistic virtual world; 2. Computational Photography, trying to synthesis and capture better photograph; 3. Computational Imaging / Optics, co-design imaging systems for better vision and make invisible visible. More specific:
+Hi! I'm a Ph.D student of [University of Rochester](https://www.rochester.edu/), working with [Prof. Yuhao Zhu](https://yuhaozhu.com/). Now I am working with [Prof. Tianfan Xue](https://tianfan.info/), [Porf. Jinwei Gu](https://www.gujinwei.org/), [Dr. Shi Guo](https://scholar.google.com/citations?user=5hsEmuQAAAAJ&hl=en&oi=ao) and all amzing people in [OpenImaging Lab](https://github.com/OpenImagingLab), focusing on Computational Photography/Imaging. My main research interests focuses on the 1. 3D Vision, ultimate goal is reconstructing a more realistic virtual world; 2. Computational Photography, trying to synthesis and capture better photograph; 3. Computational Imaging / Optics, co-design imaging systems for better vision and make invisible visible. More specific:
 
 - 3D Reconstruction and Generation;
 - Neural Rendering
