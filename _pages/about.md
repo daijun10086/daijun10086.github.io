@@ -19,11 +19,11 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 ### Short Bio
-Hi! I'm a Ph.D student of [University of Rochester](https://www.rochester.edu/), working with [Prof. Yuhao Zhu](https://yuhaozhu.com/). Now I am working with [Prof. Tianfan Xue](https://tianfan.info/), [Porf. Jinwei Gu](https://www.gujinwei.org/), [Dr. Shi Guo](https://scholar.google.com/citations?user=5hsEmuQAAAAJ&hl=en&oi=ao) and all amzing people in [OpenImaging Lab](https://github.com/OpenImagingLab), focusing on Computational Photography/Imaging. My main research interests focuses on the 1. 3D Vision, ultimate goal is reconstructing a more realistic virtual world; 2. Computational Photography, trying to synthesis and capture better photograph; 3. Computational Imaging / Optics, co-design imaging systems for better vision and make invisible visible. More specific:
+Hi! I'm a Ph.D. student at the [University of Rochester](https://www.rochester.edu/), working with [Prof. Yuhao Zhu](https://yuhaozhu.com/). I was lucky to work with [Prof. Tianfan Xue](https://tianfan.info/), [Prof. Jinwei Gu](https://www.gujinwei.org/), [Dr. Shi Guo](https://scholar.google.com/citations?user=5hsEmuQAAAAJ&hl=en&oi=ao), and all the amazing people in the [OpenImaging Lab](https://github.com/OpenImagingLab), focusing on Computational Photography/Imaging. My current research interests focus on: 1. Deep Generative Models/Theory (creating better generative models); 2. 3D Computer Vision (Spatial Intelligence) (creating immersive experiences); and 3. Computational Photography/Imaging (making the invisible visible). More specifically:
 
-- 3D Reconstruction and Generation;
-- Neural Rendering
-- Deep Generative Models
+- Video/3D/Image generation;
+- Neural Rendering;
+- Generative model theory;
 
 Generally, I'm passionate about Meaningful Vision Problems, if you want to talk with me, don't hesitate to shot me an email!
 
