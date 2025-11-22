@@ -2,7 +2,8 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='http://opt.zju.edu.cn/opten/'> Zhejiang University, Optical Engineering</a> | <a href='https://github.com/OpenImagingLab'> Shanghai AI Lab, OpenImaging Lab</a>.
+subtitle: >
+  <a href='http://opt.zju.edu.cn/opten/'> Zhejiang University, Optical Engineering</a> | <a href='https://github.com/OpenImagingLab'> Shanghai AI Lab, OpenImaging Lab</a>.
 
 profile:
   align: right
@@ -25,7 +26,7 @@ Hi! I'm a Ph.D. student at the [University of Rochester](https://www.rochester.e
 - Neural Rendering and 3D Reconstruction;
 - Generative model theory;
 
-Generally, I'm passionate about Meaningful Vision Problems, if you want to talk with me, don't hesitate to shot me an email!
+Generally, I'm passionate about Meaningful Vision Problems, if you want to talk with me, don't hesitate to shoot me an email!
 
 <div style="text-align: center; margin-top: 20px;">
   <a href="https://www.notion.so/A-Naive-Research-Start-Point-1f795dabd626804bb2f7c1b276dbe6c0?source=copy_link">Research Statement</a> |
