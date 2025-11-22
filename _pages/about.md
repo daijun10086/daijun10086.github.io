@@ -22,7 +22,7 @@ social: true  # includes social icons at the bottom of the page
 Hi! I'm a Ph.D. student at the [University of Rochester](https://www.rochester.edu/), working with [Prof. Yuhao Zhu](https://yuhaozhu.com/). I was lucky to work with [Prof. Tianfan Xue](https://tianfan.info/), [Prof. Jinwei Gu](https://www.gujinwei.org/), [Dr. Shi Guo](https://scholar.google.com/citations?user=5hsEmuQAAAAJ&hl=en&oi=ao), and all the amazing people in the [OpenImaging Lab](https://github.com/OpenImagingLab) as an intern in Shanghai AI Lab, focusing on Computational Photography/Imaging. My current research interests focus on: 1. Deep Generative Models/Theory (creating better generative models); 2. 3D Computer Vision (Spatial Intelligence) (creating immersive experiences); and 3. Computational Photography/Imaging (making the invisible visible). More specifically:
 
 - Video/3D/Image generation;
-- Neural Rendering;
+- Neural Rendering and 3D Reconstruction;
 - Generative model theory;
 
 Generally, I'm passionate about Meaningful Vision Problems, if you want to talk with me, don't hesitate to shot me an email!
