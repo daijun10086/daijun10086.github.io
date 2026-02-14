@@ -20,3 +20,31 @@
 "arXiv":
   url: https://arxiv.org
   color: "#B31B1B"
+
+"CVPR":
+  url: https://cvpr2024.thecvf.com/
+  color: "#3776ab"
+
+"ECCV":
+  url: https://eccv2024.eu/
+  color: "#4b6cb7"
+
+"ICCV":
+  url: https://iccv2025.thecvf.com/
+  color: "#1a73e8"
+
+"NeurIPS":
+  url: https://neurips.cc/
+  color: "#e06666"
+
+"ICML":
+  url: https://icml.cc/
+  color: "#ffb347"
+
+"AAAI":
+  url: https://aaai.org/
+  color: "#ff9900"
+
+"IJCAI":
+  url: https://ijcai.org/
+  color: "#009688"
