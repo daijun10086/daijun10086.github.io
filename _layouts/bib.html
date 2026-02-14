@@ -3,6 +3,13 @@
 <!-- _layouts/bib.html -->
       <div class="row">
         <div class="col-sm-2 {% if entry.preview %}preview{% endif %}">
+        {%- if entry.abbr -%}
+          {%- if site.data.venues[entry.abbr] -%}
+            <abbr class="badge venue-badge"><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>
+          {%- else -%}
+            <abbr class="badge venue-badge">{{entry.abbr}}</abbr>
+          {%- endif -%}
+        {%- endif -%}
         {%- if entry.preview -%}
           {% if entry.preview contains '://' -%}
           <img data-zoomable class="preview z-depth-1 rounded" src="{{ entry.preview }}">
@@ -119,13 +126,6 @@
         {%- capture periodical -%}{{ entrytype }}{%- if entrytype_text != "" and entryyear != "" -%}, {%- endif -%}{{ entrymonth }}{{ entryyear }}{%- endcapture -%}
         <div class="periodical">
           {{ periodical | strip }}
-          {%- if entry.abbr -%}
-            {%- if site.data.venues[entry.abbr] -%}
-              <abbr class="badge"><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>
-            {%- else -%}
-              <abbr class="badge">{{entry.abbr}}</abbr>
-            {%- endif -%}
-          {%- endif -%}
         </div>
         <div class="periodical">
           {{ entry.note | strip }}
