@@ -617,9 +617,20 @@ footer.sticky-bottom {
 
       .title {
         font-weight: bolder;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        display: block;
+        margin-bottom: 0.2rem;
       }
 
       .author {
+        display: block;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        margin-bottom: 0.2rem;
+        
         a {
           border-bottom: 1px dashed var(--global-theme-color);
 
@@ -644,6 +655,16 @@ footer.sticky-bottom {
             border-bottom: 1px dashed var(--global-text-color);
           }
         }
+      }
+
+      .periodical {
+        display: block;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        margin-bottom: 0.2rem;
+        font-style: italic;
+        color: var(--global-text-color-light);
       }
 
       .links {
