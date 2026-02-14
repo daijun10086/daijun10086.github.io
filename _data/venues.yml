@@ -1,20 +1,30 @@
 "PhysRev":
   url: https://journals.aps.org/
+  color: "#28a745"
 "PyTorch":
   url: https://pytorch.org/
+  color: "#ee4c2c"
 "ICCV":
   url: https://iccv2023.thecvf.com/
+  color: "#007bff"
 "CVPR":
   url: https://cvpr2023.thecvf.com/
+  color: "#6f42c1"
 "ECCV":
   url: https://eccv2024.ecva.net/
+  color: "#fd7e14"
 "NeurIPS":
   url: https://nips.cc/
+  color: "#20c997"
 "arXiv":
   url: https://arxiv.org/
+  color: "#b31b1b"
 "Apply Optics":
   url: https://opg.optica.org/ao/journal/ao/about
+  color: "#17a2b8"
 "SPIE":
   url: https://spie.org/conferences-and-exhibitions/photonics-asia
+  color: "#ffc107"
 "LPR":
   url: https://onlinelibrary.wiley.com/journal/18638899
+  color: "#dc3545"
