@@ -1057,17 +1057,20 @@ nav[data-toggle="toc"] {
 }
 
 .venue-badge {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
   background-color: var(--global-theme-color);
   color: white !important;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.25rem;
   font-weight: bold;
   font-size: 0.75rem;
-  line-height: 1;
+  line-height: 1.2;
+  white-space: nowrap;
 
   a {
     color: white !important;
