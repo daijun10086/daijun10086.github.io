@@ -1057,28 +1057,27 @@ nav[data-toggle="toc"] {
 }
 
 .venue-badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-  max-width: 100%;
-  min-width: 4.5rem;
-  min-height: 1.6rem;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 80px;
+  max-width: 200px;
   text-align: center;
-  margin: 0 auto 0.5rem;
+  margin-bottom: 0.5rem;
   background-color: var(--global-theme-color);
   color: white !important;
-  padding: 0.35rem 0.65rem;
+  padding: 0.16rem 0.5rem;
   border-radius: 0.25rem;
   font-weight: bold;
-  font-size: 0.75rem;
-  line-height: 1.2;
+  font-size: 0.72rem;
+  line-height: 1.05;
   white-space: nowrap;
 
   a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    width: 100%;
     color: white !important;
     &:hover {
       text-decoration: none;
