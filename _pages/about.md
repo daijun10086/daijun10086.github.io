@@ -9,6 +9,9 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
+  image_hover:  # alternate images shown on hover (cycle through)
+    - prof_pic_alt1.jpg
+    - prof_pic_alt2.jpg
   address: >
     <p>Hu Qiu, Suzhou</p>
     <p>Shooted by my girlfriend, Xiaoxuan Yang</p>

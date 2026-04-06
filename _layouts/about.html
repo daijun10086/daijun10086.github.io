@@ -23,10 +23,28 @@ layout: default
                 {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
               {% endif %}
 
+              {% if page.profile.image_hover %}
+              <div class="profile-image-hover">
+                <img
+                  src="{{ profile_image_path | relative_url }}"
+                  class="{{ profile_image_class }} profile-img-main"
+                  alt="{{ page.profile.image }}"
+                />
+                {% for hover_img in page.profile.image_hover %}
+                <img
+                  src="{{ hover_img | prepend: 'assets/img/' | relative_url }}"
+                  class="{{ profile_image_class }} profile-img-alt"
+                  alt="{{ hover_img }}"
+                  data-hover-index="{{ forloop.index0 }}"
+                />
+                {% endfor %}
+              </div>
+              {% else %}
               {% include figure.html
               path=profile_image_path
               class=profile_image_class
               alt=page.profile.image -%}
+              {% endif %}
             {% endif -%}
             {%- if page.profile.address %}
             <div class="address">
@@ -74,3 +92,32 @@ layout: default
         </article>
 
 </div>
+
+{% if page.profile.image_hover %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var container = document.querySelector(".profile-image-hover");
+    if (!container) return;
+
+    var altImages = container.querySelectorAll(".profile-img-alt");
+    if (altImages.length === 0) return;
+
+    var hoverIndex = 0;
+
+    // Set first alt image as active initially
+    altImages[0].classList.add("active");
+
+    container.addEventListener("mouseenter", function () {
+      container.classList.add("hover");
+    });
+
+    container.addEventListener("mouseleave", function () {
+      container.classList.remove("hover");
+      // Advance to next image for the next hover
+      altImages[hoverIndex].classList.remove("active");
+      hoverIndex = (hoverIndex + 1) % altImages.length;
+      altImages[hoverIndex].classList.add("active");
+    });
+  });
+</script>
+{% endif %}
