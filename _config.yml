@@ -108,7 +108,7 @@ discord_id: # your discord id (18-digit unique numerical identifier)
 contact_note: >
   The best way to contact with me is by Email, please be free to drop me email at anytime!
   <br><br>
-  Fun Fact: I keep the record of being rejected (我保持着一项纪录，就是我作为第一作者的论文连续被拒稿的次数).
+  <span style="color: var(--global-theme-color);">Fun Fact: I hold a personal record for the most consecutive rejections of one of my first-author papers — and the streak is still going.</span>
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
