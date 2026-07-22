@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const isGitHubPagesBuild = process.env.GITHUB_PAGES === "true";
+const githubPagesBasePath = process.env.GITHUB_PAGES_BASE_PATH || "";
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -10,6 +11,7 @@ const nextConfig: NextConfig = {
     ? {
         output: "export" as const,
         trailingSlash: true,
+        basePath: githubPagesBasePath,
         images: { unoptimized: true },
         typescript: { tsconfigPath: "tsconfig.pages.json" },
       }

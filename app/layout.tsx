@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://daijun-research-notes.jundai332.chatgpt.site";
-const metadataBase = new URL(siteUrl);
+const metadataBase = new URL(siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`);
+const socialImageUrl = new URL("og-v3.png", metadataBase).toString();
 
 export const metadata: Metadata = {
   metadataBase,
@@ -15,13 +16,13 @@ export const metadata: Metadata = {
     type: "website",
     title: "Daijun — Research & Notes",
     description: "Research projects, working notes, and essays by Daijun.",
-    images: [{ url: new URL("/og-v3.png", metadataBase).toString(), width: 1536, height: 1024 }],
+    images: [{ url: socialImageUrl, width: 1536, height: 1024 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Daijun — Research & Notes",
     description: "Research projects, working notes, and essays by Daijun.",
-    images: [new URL("/og-v3.png", metadataBase).toString()],
+    images: [socialImageUrl],
   },
 };
 
