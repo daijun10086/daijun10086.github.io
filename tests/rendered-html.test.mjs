@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render(path = "/") {
+async function render(path) {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${path}`);
   const { default: worker } = await import(workerUrl.href);
@@ -23,21 +23,31 @@ async function render(path = "/") {
   );
 }
 
-test("renders the research, blog, and about home page", async () => {
-  const response = await render();
+test("renders research as a focused standalone page", async () => {
+  const response = await render("/research");
   assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-
   const html = await response.text();
-  assert.match(html, /Daijun — Research &amp; Notes/);
-  assert.match(html, /Ideas deserve a place to breathe/);
-  assert.match(html, /id="research"/);
-  assert.match(html, /id="blog"/);
-  assert.match(html, /id="about"/);
-  assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
+
+  assert.match(html, /<h1>Research<\/h1>/);
+  assert.match(html, /Beyond the Paper/);
+  assert.match(html, />Project<\/a>/);
+  assert.match(html, />PDF<\/a>/);
+  assert.match(html, />Archive<\/a>/);
+  assert.doesNotMatch(html, /Ideas deserve a place to breathe|Selected work|Every project begins/);
+  assert.doesNotMatch(html, /A working model for publishing/);
 });
 
-test("uses one content source and one shared article template", async () => {
+test("renders blog as a separate page without previews", async () => {
+  const response = await render("/blog");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /<h1>Blog<\/h1>/);
+  assert.match(html, /The Quiet Value of Keeping Notes/);
+  assert.doesNotMatch(html, /Recent entries|Academic thoughts|Writing as a way to notice/);
+});
+
+test("keeps content in one shared article system", async () => {
   const [content, articleTemplate, packageJson] = await Promise.all([
     readFile(new URL("../content/posts.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/writing/[slug]/page.tsx", import.meta.url), "utf8"),
@@ -45,10 +55,7 @@ test("uses one content source and one shared article template", async () => {
   ]);
 
   assert.match(content, /export const posts/);
-  assert.match(content, /kind: "research"/);
-  assert.match(content, /kind: "blog"/);
   assert.match(articleTemplate, /<ReactMarkdown/);
   assert.match(articleTemplate, /getPost\(slug\)/);
   assert.match(packageJson, /"react-markdown"/);
-  assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });

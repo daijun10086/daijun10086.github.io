@@ -19,13 +19,13 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       title: "Daijun — Research & Notes",
       description: "Research projects, working notes, and essays by Daijun.",
-      images: [{ url: new URL("/og.png", metadataBase).toString(), width: 1536, height: 1024 }],
+      images: [{ url: new URL("/og-v2.png", metadataBase).toString(), width: 1536, height: 1024 }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Daijun — Research & Notes",
       description: "Research projects, working notes, and essays by Daijun.",
-      images: [new URL("/og.png", metadataBase).toString()],
+      images: [new URL("/og-v2.png", metadataBase).toString()],
     },
   };
 }

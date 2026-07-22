@@ -1,20 +1,27 @@
 import Link from "next/link";
-import { DitherHeader } from "./DitherHeader";
 
-export function SiteHeader() {
+type Section = "research" | "blog" | "about";
+
+export function SiteHeader({ current }: { current?: Section }) {
   return (
     <>
-      <div className="visual-header">
-        <DitherHeader />
+      <div className="visual-header" aria-hidden="true">
+        <img src="/enso-dither.png" alt="" fetchPriority="high" />
       </div>
       <header className="site-header shell">
-        <Link className="site-name" href="/" aria-label="Daijun, home">
+        <Link className="site-name" href="/research" aria-label="Daijun, research home">
           Daijun
         </Link>
         <nav aria-label="Primary navigation">
-          <a href="/#research">research</a>
-          <a href="/#blog">blog</a>
-          <a href="/#about">about</a>
+          <Link href="/research" aria-current={current === "research" ? "page" : undefined}>
+            research
+          </Link>
+          <Link href="/blog" aria-current={current === "blog" ? "page" : undefined}>
+            blog
+          </Link>
+          <Link href="/about" aria-current={current === "about" ? "page" : undefined}>
+            about
+          </Link>
         </nav>
       </header>
     </>
@@ -24,7 +31,6 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="site-footer shell">
-      <p>Notes, projects, and unfinished questions.</p>
       <p>© {new Date().getFullYear()} Daijun.</p>
     </footer>
   );
