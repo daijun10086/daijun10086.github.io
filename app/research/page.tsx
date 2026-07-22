@@ -5,7 +5,7 @@ import { researchPosts } from "../../content/posts";
 
 export const metadata: Metadata = {
   title: "Research",
-  description: "Research projects by Daijun.",
+  description: "Research projects by Dai-Jun.",
 };
 
 export default function ResearchPage() {

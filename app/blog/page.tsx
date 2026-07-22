@@ -5,7 +5,7 @@ import { blogPosts } from "../../content/posts";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Writing by Daijun.",
+  description: "Writing by Dai-Jun.",
 };
 
 export default function BlogPage() {

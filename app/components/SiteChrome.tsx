@@ -11,8 +11,8 @@ export function SiteHeader({ current }: { current?: Section }) {
     <>
       <LogogramTitle word={activeSection} />
       <header className="site-header shell">
-        <Link className="site-name" href="/about" aria-label="Daijun, about home">
-          Daijun
+        <Link className="site-name" href="/about" aria-label="Dai-Jun, about home">
+          Dai-Jun
         </Link>
         <nav aria-label="Primary navigation">
           <Link href="/about" aria-current={current === "about" ? "page" : undefined}>
@@ -33,7 +33,7 @@ export function SiteHeader({ current }: { current?: Section }) {
 export function SiteFooter() {
   return (
     <footer className="site-footer shell">
-      <p>© {new Date().getFullYear()} Daijun.</p>
+      <p>© {new Date().getFullYear()} Dai-Jun.</p>
       <ThemeControl />
     </footer>
   );

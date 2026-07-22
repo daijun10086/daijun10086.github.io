@@ -8,20 +8,20 @@ const socialImageUrl = new URL("og-v3.png", metadataBase).toString();
 export const metadata: Metadata = {
   metadataBase,
   title: {
-    default: "Daijun — Research & Notes",
-    template: "%s — Daijun",
+    default: "Dai-Jun — Research & Notes",
+    template: "%s — Dai-Jun",
   },
-  description: "Research projects, working notes, and essays by Daijun.",
+  description: "Research projects, working notes, and essays by Dai-Jun.",
   openGraph: {
     type: "website",
-    title: "Daijun — Research & Notes",
-    description: "Research projects, working notes, and essays by Daijun.",
+    title: "Dai-Jun — Research & Notes",
+    description: "Research projects, working notes, and essays by Dai-Jun.",
     images: [{ url: socialImageUrl, width: 1536, height: 1024 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Daijun — Research & Notes",
-    description: "Research projects, working notes, and essays by Daijun.",
+    title: "Dai-Jun — Research & Notes",
+    description: "Research projects, working notes, and essays by Dai-Jun.",
     images: [socialImageUrl],
   },
 };

@@ -40,3 +40,6 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# generated from the Markdown files in content/blog and content/research
+/content/posts.generated.ts

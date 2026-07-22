@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(path) {
@@ -29,6 +29,8 @@ test("renders research as a focused standalone page", async () => {
   const html = await response.text();
 
   assert.match(html, /<h1 class="sr-only">Research<\/h1>/);
+  assert.match(html, />Dai-Jun<\/a>/);
+  assert.match(html, /<p>© .*Dai-Jun\.<\/p>/);
   assert.match(html, /animated particle logogram/);
   assert.match(html, /Color theme/);
   assert.match(html, /Beyond the Paper/);
@@ -54,15 +56,20 @@ test("renders blog as a separate page without previews", async () => {
   assert.doesNotMatch(html, /Recent entries|Academic thoughts|Writing as a way to notice/);
 });
 
-test("keeps content in one shared article system", async () => {
-  const [content, articleTemplate, packageJson] = await Promise.all([
+test("builds one shared article system from individual Markdown files", async () => {
+  const [content, generator, articleTemplate, blogFiles, researchFiles] = await Promise.all([
     readFile(new URL("../content/posts.ts", import.meta.url), "utf8"),
+    readFile(new URL("../scripts/generate-posts.mjs", import.meta.url), "utf8"),
     readFile(new URL("../app/writing/[slug]/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readdir(new URL("../content/blog/", import.meta.url)),
+    readdir(new URL("../content/research/", import.meta.url)),
   ]);
 
   assert.match(content, /export const posts/);
+  assert.match(content, /generatedPosts/);
+  assert.match(generator, /gray-matter/);
+  assert.equal(blogFiles.filter((file) => file.endsWith(".md") && !file.startsWith("_")).length, 3);
+  assert.equal(researchFiles.filter((file) => file.endsWith(".md") && !file.startsWith("_")).length, 2);
   assert.match(articleTemplate, /<ReactMarkdown/);
   assert.match(articleTemplate, /getPost\(slug\)/);
-  assert.match(packageJson, /"react-markdown"/);
 });
