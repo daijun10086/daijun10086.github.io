@@ -50,10 +50,25 @@ test("renders blog as a separate page without previews", async () => {
   const response = await render("/blog");
   assert.equal(response.status, 200);
   const html = await response.text();
+  const blogFiles = (await readdir(new URL("../content/blog/", import.meta.url))).filter(
+    (file) => file.endsWith(".md") && !file.startsWith("_"),
+  );
 
   assert.match(html, /<h1 class="sr-only">Blog<\/h1>/);
-  assert.match(html, /The Quiet Value of Keeping Notes/);
-  assert.doesNotMatch(html, /Recent entries|Academic thoughts|Writing as a way to notice/);
+  assert.equal((html.match(/<article class="post-row">/g) || []).length, blogFiles.length);
+  for (const file of blogFiles) {
+    assert.ok(html.includes(`/writing/${file.slice(0, -3)}`));
+  }
+  assert.doesNotMatch(html, /Recent entries|Academic thoughts/);
+});
+
+test("maps Markdown-preview public paths to deployed asset URLs", async () => {
+  const response = await render("/writing/towards-happiness");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /src="\.\.\/\.\.\/assets\/blog\/towards-happiness\/zen\.png"/);
+  assert.doesNotMatch(html, /src="\.\.\/\.\.\/public\/assets\//);
 });
 
 test("builds one shared article system from individual Markdown files", async () => {
@@ -68,8 +83,8 @@ test("builds one shared article system from individual Markdown files", async ()
   assert.match(content, /export const posts/);
   assert.match(content, /generatedPosts/);
   assert.match(generator, /gray-matter/);
-  assert.equal(blogFiles.filter((file) => file.endsWith(".md") && !file.startsWith("_")).length, 1);
-  assert.equal(researchFiles.filter((file) => file.endsWith(".md") && !file.startsWith("_")).length, 1);
+  assert.ok(blogFiles.some((file) => file.endsWith(".md") && !file.startsWith("_")));
+  assert.ok(researchFiles.some((file) => file.endsWith(".md") && !file.startsWith("_")));
   assert.match(articleTemplate, /<ReactMarkdown/);
   assert.match(articleTemplate, /getPost\(slug\)/);
 });

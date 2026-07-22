@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { SiteFooter, SiteHeader } from "../../components/SiteChrome";
 import { getPost, posts } from "../../../content/posts";
@@ -11,6 +11,15 @@ type PageProps = {
 };
 
 export const dynamicParams = false;
+
+function transformContentUrl(url: string) {
+  const localPublicPrefix = "../../public/";
+  const siteUrl = url.startsWith(localPublicPrefix)
+    ? `../../${url.slice(localPublicPrefix.length)}`
+    : url;
+
+  return defaultUrlTransform(siteUrl);
+}
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -61,7 +70,9 @@ export default async function WritingPage({ params }: PageProps) {
           </header>
 
           <div className="article-body">
-            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{post.body}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]} urlTransform={transformContentUrl}>
+              {post.body}
+            </ReactMarkdown>
           </div>
 
           <footer className="article-end">

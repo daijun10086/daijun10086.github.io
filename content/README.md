@@ -32,10 +32,12 @@ public/assets/
 在 Markdown 正文中使用相对地址：
 
 ```md
-![图片说明](../../assets/blog/my-new-article/figure-1.jpg)
+![图片说明](../../public/assets/blog/my-new-article/figure-1.jpg)
 
-[查看 PDF](../../assets/research/my-project/paper.pdf)
+[查看 PDF](../../public/assets/research/my-project/paper.pdf)
 ```
+
+这个路径对应 Markdown 文件在本地的真实位置，因此编辑器可以直接预览。网站渲染文章时会自动移除路径中的 `public/`，同一写法也可以正常部署到 GitHub Pages。
 
 Research 顶部的 `links` 使用站点地址：
 
