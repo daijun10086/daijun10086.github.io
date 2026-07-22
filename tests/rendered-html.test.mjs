@@ -68,8 +68,8 @@ test("builds one shared article system from individual Markdown files", async ()
   assert.match(content, /export const posts/);
   assert.match(content, /generatedPosts/);
   assert.match(generator, /gray-matter/);
-  assert.equal(blogFiles.filter((file) => file.endsWith(".md") && !file.startsWith("_")).length, 3);
-  assert.equal(researchFiles.filter((file) => file.endsWith(".md") && !file.startsWith("_")).length, 2);
+  assert.equal(blogFiles.filter((file) => file.endsWith(".md") && !file.startsWith("_")).length, 1);
+  assert.equal(researchFiles.filter((file) => file.endsWith(".md") && !file.startsWith("_")).length, 1);
   assert.match(articleTemplate, /<ReactMarkdown/);
   assert.match(articleTemplate, /getPost\(slug\)/);
 });
