@@ -1,28 +1,33 @@
 import Link from "next/link";
+import { LogogramTitle } from "./LogogramTitle";
+import { ThemeControl } from "./ThemeControl";
 
 type Section = "research" | "blog" | "about";
 
 export function SiteHeader({ current }: { current?: Section }) {
+  const activeSection = current || "research";
+
   return (
     <>
-      <div className="visual-header" aria-hidden="true">
-        <img src="/enso-dither.png" alt="" fetchPriority="high" />
-      </div>
+      <LogogramTitle word={activeSection} />
       <header className="site-header shell">
         <Link className="site-name" href="/research" aria-label="Daijun, research home">
           Daijun
         </Link>
-        <nav aria-label="Primary navigation">
-          <Link href="/research" aria-current={current === "research" ? "page" : undefined}>
-            research
-          </Link>
-          <Link href="/blog" aria-current={current === "blog" ? "page" : undefined}>
-            blog
-          </Link>
-          <Link href="/about" aria-current={current === "about" ? "page" : undefined}>
-            about
-          </Link>
-        </nav>
+        <div className="header-actions">
+          <ThemeControl />
+          <nav aria-label="Primary navigation">
+            <Link href="/research" aria-current={current === "research" ? "page" : undefined}>
+              research
+            </Link>
+            <Link href="/blog" aria-current={current === "blog" ? "page" : undefined}>
+              blog
+            </Link>
+            <Link href="/about" aria-current={current === "about" ? "page" : undefined}>
+              about
+            </Link>
+          </nav>
+        </div>
       </header>
     </>
   );

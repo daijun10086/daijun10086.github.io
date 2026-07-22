@@ -9,7 +9,23 @@
   --faded: #6e5d4b;
   --border: #dbc9ad;
   --code: #f1e4cf;
+  --code-block: #fffdf8;
+  --logogram: #3d2415;
   color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #090909;
+  --text: #e9e2d8;
+  --primary: #c08a55;
+  --primary-hover: #e0aa73;
+  --heading: #f3ece3;
+  --faded: #9d9286;
+  --border: #332d28;
+  --code: #1a1715;
+  --code-block: #11100f;
+  --logogram: #eee5da;
+  color-scheme: dark;
 }
 
 * {
@@ -29,6 +45,7 @@ body {
   font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 220ms ease, color 220ms ease;
 }
 
 ::selection {
@@ -53,22 +70,19 @@ a:hover {
   padding-inline: 40px;
 }
 
-.visual-header {
+.logogram-title {
   position: relative;
   width: 100%;
-  height: 190px;
+  height: 228px;
   overflow: hidden;
   background: var(--background);
+  transition: background-color 220ms ease;
 }
 
-.visual-header img {
+.logogram-title canvas {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
-  mix-blend-mode: multiply;
-  filter: contrast(1.08);
 }
 
 .site-header {
@@ -76,8 +90,8 @@ a:hover {
   align-items: baseline;
   justify-content: space-between;
   height: 25px;
-  margin-top: 8px;
-  margin-bottom: 42px;
+  margin-top: 4px;
+  margin-bottom: 34px;
 }
 
 .site-name {
@@ -90,12 +104,53 @@ a:hover {
   color: var(--primary-hover);
 }
 
+.header-actions {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+}
+
 .site-header nav {
   display: flex;
   gap: 9px;
   margin: 0;
   padding: 0;
   font-size: 19px;
+}
+
+.theme-control {
+  display: flex;
+  gap: 7px;
+  align-items: baseline;
+}
+
+.theme-control button {
+  appearance: none;
+  margin: 0;
+  padding: 0 0 1px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--faded);
+  cursor: pointer;
+  font: 11px/16px "Ubuntu Mono", ui-monospace, monospace;
+  text-transform: lowercase;
+}
+
+.theme-control button:hover {
+  color: var(--primary-hover);
+}
+
+.theme-control button[aria-pressed="true"] {
+  border-color: currentColor;
+  color: var(--text);
+}
+
+.theme-control button:focus-visible,
+.site-header a:focus-visible {
+  outline: 1px solid var(--primary);
+  outline-offset: 4px;
 }
 
 .site-header nav a[aria-current="page"] {
@@ -108,6 +163,18 @@ a:hover {
   padding-top: 1px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .index-page h1,
 .article-header h1,
 .article-body h2,
@@ -115,12 +182,6 @@ a:hover {
   color: var(--heading);
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 400;
-}
-
-.index-page h1 {
-  margin: 5px 0 27px;
-  font-size: 52px;
-  line-height: 56px;
 }
 
 .post-list {
@@ -313,7 +374,7 @@ a:hover {
 .article-body pre {
   overflow-x: auto;
   padding: 12px 18px;
-  background: #fffdf8;
+  background: var(--code-block);
   box-shadow: 0 0 3px rgba(140, 95, 35, 0.18);
 }
 
@@ -372,15 +433,14 @@ a:hover {
     padding-inline: 20px;
   }
 
-  .visual-header {
-    height: 150px;
+  .logogram-title {
+    height: 188px;
   }
 
   .site-header {
     margin-bottom: 30px;
   }
 
-  .index-page h1,
   .article-header h1 {
     font-size: 42px;
     line-height: 45px;
@@ -405,8 +465,20 @@ a:hover {
     font-size: 19px;
   }
 
-  .visual-header {
-    height: 128px;
+  .logogram-title {
+    height: 158px;
+  }
+
+  .site-header {
+    height: auto;
+    align-items: flex-start;
+    margin-bottom: 27px;
+  }
+
+  .header-actions {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 4px;
   }
 
   .site-header nav {
@@ -435,5 +507,6 @@ a:hover {
   *::before,
   *::after {
     scroll-behavior: auto !important;
+    transition: none !important;
   }
 }

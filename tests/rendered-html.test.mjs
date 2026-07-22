@@ -28,7 +28,9 @@ test("renders research as a focused standalone page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
 
-  assert.match(html, /<h1>Research<\/h1>/);
+  assert.match(html, /<h1 class="sr-only">Research<\/h1>/);
+  assert.match(html, /animated particle logogram/);
+  assert.match(html, /Color theme/);
   assert.match(html, /Beyond the Paper/);
   assert.match(html, />Project<\/a>/);
   assert.match(html, />PDF<\/a>/);
@@ -42,7 +44,7 @@ test("renders blog as a separate page without previews", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
 
-  assert.match(html, /<h1>Blog<\/h1>/);
+  assert.match(html, /<h1 class="sr-only">Blog<\/h1>/);
   assert.match(html, /The Quiet Value of Keeping Notes/);
   assert.doesNotMatch(html, /Recent entries|Academic thoughts|Writing as a way to notice/);
 });

@@ -12,7 +12,7 @@ export default function AboutPage() {
     <>
       <SiteHeader current="about" />
       <main className="shell index-page about-page">
-        <h1>About</h1>
+        <h1 className="sr-only">About</h1>
         <div className="about-copy">
           <p>I am Daijun. I research, write, and keep notes here.</p>
           <p>

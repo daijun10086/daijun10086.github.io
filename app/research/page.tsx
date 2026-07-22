@@ -13,7 +13,7 @@ export default function ResearchPage() {
     <>
       <SiteHeader current="research" />
       <main className="shell index-page">
-        <h1>Research</h1>
+        <h1 className="sr-only">Research</h1>
         <PostList posts={researchPosts} />
       </main>
       <SiteFooter />

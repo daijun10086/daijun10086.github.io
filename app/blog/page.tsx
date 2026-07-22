@@ -13,7 +13,7 @@ export default function BlogPage() {
     <>
       <SiteHeader current="blog" />
       <main className="shell index-page">
-        <h1>Blog</h1>
+        <h1 className="sr-only">Blog</h1>
         <PostList posts={blogPosts} />
       </main>
       <SiteFooter />

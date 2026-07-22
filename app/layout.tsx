@@ -19,20 +19,27 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       title: "Daijun — Research & Notes",
       description: "Research projects, working notes, and essays by Daijun.",
-      images: [{ url: new URL("/og-v2.png", metadataBase).toString(), width: 1536, height: 1024 }],
+      images: [{ url: new URL("/og-v3.png", metadataBase).toString(), width: 1536, height: 1024 }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Daijun — Research & Notes",
       description: "Research projects, working notes, and essays by Daijun.",
-      images: [new URL("/og-v2.png", metadataBase).toString()],
+      images: [new URL("/og-v3.png", metadataBase).toString()],
     },
   };
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var m=localStorage.getItem('theme-mode')||'auto';if(['light','auto','dark'].indexOf(m)<0)m='auto';var h=new Date().getHours();var t=m==='auto'?(h>=18||h<6?'dark':'light'):m;document.documentElement.dataset.themeMode=m;document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
