@@ -29,6 +29,8 @@ test("exports every primary page as a directory index", async () => {
   assert.match(home, /I am Dai-Jun/);
   assert.match(home, /href="https:\/\/wandell\.github\.io\/FOV-1995\/"/);
   assert.match(home, /href="https:\/\/en\.wikipedia\.org\/wiki\/Intelligence"/);
+  assert.match(home, /rel="icon"/);
+  assert.match(home, /tab-logo\.svg/);
   assert.match(about, /<h1 class="sr-only">About<\/h1>/);
   assert.match(research, /Beyond the Paper/);
   for (const slug of await contentSlugs("blog")) {
@@ -49,5 +51,6 @@ test("pre-renders writing routes and GitHub Pages support files", async () => {
   await access(new URL("404.html", output));
   await access(new URL(".nojekyll", output));
   await access(new URL("og-v3.png", output));
+  await access(new URL("tab-logo.svg", output));
   await access(new URL("assets/blog/towards-happiness/zen.png", output));
 });

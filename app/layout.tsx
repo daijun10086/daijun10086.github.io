@@ -4,6 +4,7 @@ import "./globals.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://daijun-research-notes.jundai332.chatgpt.site";
 const metadataBase = new URL(siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`);
 const socialImageUrl = new URL("og-v3.png", metadataBase).toString();
+const faviconUrl = new URL("tab-logo.svg", metadataBase).toString();
 
 export const metadata: Metadata = {
   metadataBase,
@@ -12,6 +13,10 @@ export const metadata: Metadata = {
     template: "%s — Dai-Jun",
   },
   description: "Research projects, working notes, and essays by Dai-Jun.",
+  icons: {
+    icon: [{ url: faviconUrl, type: "image/svg+xml" }],
+    shortcut: [faviconUrl],
+  },
   openGraph: {
     type: "website",
     title: "Dai-Jun — Research & Notes",

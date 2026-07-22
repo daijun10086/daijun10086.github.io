@@ -29,6 +29,8 @@ test("renders research as a focused standalone page", async () => {
   const html = await response.text();
 
   assert.match(html, /<h1 class="sr-only">Research<\/h1>/);
+  assert.match(html, /rel="icon"/);
+  assert.match(html, /tab-logo\.svg/);
   assert.match(html, />Dai-Jun<\/a>/);
   assert.match(html, /<p>© .*Dai-Jun\.<\/p>/);
   assert.match(html, /animated particle logogram/);
