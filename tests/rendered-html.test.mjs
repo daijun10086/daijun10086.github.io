@@ -37,6 +37,11 @@ test("renders research as a focused standalone page", async () => {
   assert.match(html, />Archive<\/a>/);
   assert.doesNotMatch(html, /Ideas deserve a place to breathe|Selected work|Every project begins/);
   assert.doesNotMatch(html, /A working model for publishing/);
+
+  const aboutPosition = html.indexOf('href="/about"');
+  const researchPosition = html.indexOf('href="/research"', aboutPosition + 1);
+  const blogPosition = html.indexOf('href="/blog"');
+  assert.ok(aboutPosition >= 0 && aboutPosition < researchPosition && researchPosition < blogPosition);
 });
 
 test("renders blog as a separate page without previews", async () => {
