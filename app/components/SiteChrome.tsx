@@ -14,20 +14,17 @@ export function SiteHeader({ current }: { current?: Section }) {
         <Link className="site-name" href="/research" aria-label="Daijun, research home">
           Daijun
         </Link>
-        <div className="header-actions">
-          <ThemeControl />
-          <nav aria-label="Primary navigation">
-            <Link href="/research" aria-current={current === "research" ? "page" : undefined}>
-              research
-            </Link>
-            <Link href="/blog" aria-current={current === "blog" ? "page" : undefined}>
-              blog
-            </Link>
-            <Link href="/about" aria-current={current === "about" ? "page" : undefined}>
-              about
-            </Link>
-          </nav>
-        </div>
+        <nav aria-label="Primary navigation">
+          <Link href="/research" aria-current={current === "research" ? "page" : undefined}>
+            research
+          </Link>
+          <Link href="/blog" aria-current={current === "blog" ? "page" : undefined}>
+            blog
+          </Link>
+          <Link href="/about" aria-current={current === "about" ? "page" : undefined}>
+            about
+          </Link>
+        </nav>
       </header>
     </>
   );
@@ -37,6 +34,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer shell">
       <p>© {new Date().getFullYear()} Daijun.</p>
+      <ThemeControl />
     </footer>
   );
 }

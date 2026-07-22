@@ -104,12 +104,6 @@ a:hover {
   color: var(--primary-hover);
 }
 
-.header-actions {
-  display: flex;
-  align-items: baseline;
-  gap: 22px;
-}
-
 .site-header nav {
   display: flex;
   gap: 9px;
@@ -134,7 +128,8 @@ a:hover {
   background: transparent;
   color: var(--faded);
   cursor: pointer;
-  font: 11px/16px "Ubuntu Mono", ui-monospace, monospace;
+  font: 10px/15px "Ubuntu Mono", ui-monospace, monospace;
+  opacity: 0.68;
   text-transform: lowercase;
 }
 
@@ -144,11 +139,13 @@ a:hover {
 
 .theme-control button[aria-pressed="true"] {
   border-color: currentColor;
-  color: var(--text);
+  color: var(--faded);
+  opacity: 1;
 }
 
 .theme-control button:focus-visible,
-.site-header a:focus-visible {
+.site-header a:focus-visible,
+.site-footer button:focus-visible {
   outline: 1px solid var(--primary);
   outline-offset: 4px;
 }
@@ -264,6 +261,11 @@ a:hover {
 
 .site-footer p {
   margin: 0;
+}
+
+.site-footer .theme-control {
+  justify-content: flex-end;
+  margin-top: 4px;
 }
 
 .article-page {
@@ -473,12 +475,6 @@ a:hover {
     height: auto;
     align-items: flex-start;
     margin-bottom: 27px;
-  }
-
-  .header-actions {
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    gap: 4px;
   }
 
   .site-header nav {
