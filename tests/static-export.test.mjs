@@ -20,6 +20,8 @@ test("exports every primary page as a directory index", async () => {
 
   assert.match(home, /<h1 class="sr-only">About<\/h1>/);
   assert.match(home, /I am Dai-Jun/);
+  assert.match(home, /href="https:\/\/wandell\.github\.io\/FOV-1995\/"/);
+  assert.match(home, /href="https:\/\/en\.wikipedia\.org\/wiki\/Intelligence"/);
   assert.match(about, /<h1 class="sr-only">About<\/h1>/);
   assert.match(research, /Beyond the Paper/);
   assert.match(blog, /The Quiet Value of Keeping Notes/);
