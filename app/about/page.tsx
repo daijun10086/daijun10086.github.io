@@ -21,7 +21,7 @@ export default function AboutPage() {
             about life and philosophy. Hoping for a better world and future.
           </p>
           <p>
-            <Link href="mailto:jundai332@gmail.com">Email: jundai332@gmail.com</Link>
+            <Link href="mailto:jundai332@gmail.com">jundai332@gmail.com</Link>
           </p>
         </div>
       </main>
