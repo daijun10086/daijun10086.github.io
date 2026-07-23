@@ -38,7 +38,7 @@ At this point, I expect the final decision to be a **rejection**. Another misera
 
 If NeurIPS ends as I expect, it will mark five consecutive unsuccessful submissions, and the streak may continue. Put differently, I have not had a paper accepted at a so-called top-tier computer vision conference in two years—nearly three.
 
-To be honest, I know many other PhD and master's students who have published more than five papers at top-tier conferences. Comparing myself with them puts me under enormous pressure and makes me anxious. Sometimes I feel so depressed that I begin to wonder whether I am qualified to be a PhD student at all. More importantly, I no longer find much joy or fun in research.
+To be honest, I know many other PhD and master's students who have published more than five papers at top-tier conferences. Comparing myself with them puts me under enormous pressure and makes me anxious. Sometimes I feel so depressed that I begin to wonder whether I am qualified to be a PhD student at all. **More importantly, I no longer find much joy or fun in research**.
 
 These past and ongoing failures also cause enormous emotional fluctuations in my current projects. Several recurring thoughts come to mind:
 
