@@ -48,6 +48,7 @@ These past and ongoing failures also cause enormous emotional fluctuations in my
 4. "I should produce better work in every respect—_writing_, _figures_, _rebuttals_, everything."
 5. "I am embarrassed that I have been rejected by so many conferences and have so few research outcomes."
 6. "I increasingly expect my current projects to be rejected as well, simply because I am the one conducting them."
+7. "I can't find a good internship during the summer since no good outcome!"
 
 The list feels endless. Yet most of these thoughts are negative and offer nothing useful for the rest of my research journey. Worse, they directly harm my ongoing projects. Sometimes I stop working on research for days—or even months.
 
