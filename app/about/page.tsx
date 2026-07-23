@@ -15,13 +15,13 @@ export default function AboutPage() {
         <h1 className="sr-only">About</h1>
         <div className="about-copy">
           <p>
-            I am Dai-Jun. I do research about{" "}
+            I am Dai-Jun. I do research and engineering about{" "}
             <Link href="https://wandell.github.io/FOV-1995/">vision</Link> and{" "}
             <Link href="https://en.wikipedia.org/wiki/Intelligence">intelligence</Link>, writing
-            about life and philosophy. Hope for a better world and future.
+            about life and philosophy. Hoping for a better world and future.
           </p>
           <p>
-            <Link href="mailto:jundai332@gmail.com">Email</Link>
+            <Link href="mailto:jundai332@gmail.com">Email: jundai332@gmail.com</Link>
           </p>
         </div>
       </main>
