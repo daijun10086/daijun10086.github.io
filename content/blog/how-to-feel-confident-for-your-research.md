@@ -37,3 +37,16 @@ At this point, I expect the final decision to be a **rejection**. Another misera
 > 5. _Event3D_ — likely to be withdrawn from NeurIPS 2026 after receiving no positive ratings.
 
 If NeurIPS ends as I expect, it will mark five consecutive unsuccessful submissions, and the streak may continue. Put differently, I have not had a paper accepted at a so-called top-tier computer vision conference in two years—nearly three.
+
+To be honest, I know many other PhD and master's students who have published more than five papers at top-tier conferences. Comparing myself with them puts me under enormous pressure and makes me anxious. Sometimes I feel so depressed that I begin to wonder whether I am qualified to be a PhD student at all. More importantly, I no longer find much joy or fun in research.
+
+These past and ongoing failures also cause enormous emotional fluctuations in my current projects. Several recurring thoughts come to mind:
+
+1. "I should do research as quickly as possible, even if the result is a trash paper. At least I would have more publications. If I submit enough papers, some of them will be _accepted_ by chance, right?"
+2. "I am really bad at research. I should quit research—and perhaps my PhD."
+3. "I am a much worse PhD student than all those excellent students around me."
+4. "I should produce better work in every respect—_writing_, _figures_, _rebuttals_, everything."
+5. "I am embarrassed that I have been rejected by so many conferences and have so few research outcomes."
+6. "I increasingly expect my current projects to be rejected as well, simply because I am the one conducting them."
+
+The list feels endless. Yet most of these thoughts are negative and offer nothing useful for the rest of my research journey. Worse, they directly harm my ongoing projects. Sometimes I stop working on research for days—or even months.
