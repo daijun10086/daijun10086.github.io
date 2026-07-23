@@ -50,3 +50,8 @@ These past and ongoing failures also cause enormous emotional fluctuations in my
 6. "I increasingly expect my current projects to be rejected as well, simply because I am the one conducting them."
 
 The list feels endless. Yet most of these thoughts are negative and offer nothing useful for the rest of my research journey. Worse, they directly harm my ongoing projects. Sometimes I stop working on research for days—or even months.
+
+<div align="center">
+  <img src="../../public/assets/blog/how-to-feel-confident-for-your-research/fuck_phd.jpeg" width="50%" />
+  <figcaption>Exactly Me - A Fucked PhD</figcaption>
+</div>
