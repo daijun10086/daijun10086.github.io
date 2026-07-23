@@ -55,3 +55,17 @@ The list feels endless. Yet most of these thoughts are negative and offer nothin
   <img src="../../public/assets/blog/how-to-feel-confident-for-your-research/fuck_phd.jpeg" width="50%" />
   <figcaption>Exactly Me - A Fucked PhD</figcaption>
 </div>
+
+## Why continue?
+
+So, what should I do next—leave my PhD program, or keep suffering, keep improving, and believe that the next paper might be accepted? Before choosing, I need to return to a more basic question: why did I decide to pursue a PhD in computer vision in the first place? After thinking about it deeply and honestly, I can identify several motivations:
+
+1. A PhD in computer vision—or simply having a doctorate—feels cool. After all, I would get to put "Dr." before my name.
+2. A PhD could help me enter industry from a stronger position. For example, I might qualify for a Research Scientist role rather than a Research Engineer role.
+3. I might be able to stay in academia and eventually become a professor.
+4. A PhD aligns with my broader life goal: remain curious, keep learning, and contribute to one of the most important technologies of our time—AI. There will always be time to find a job and make money, but perhaps only a limited window in which to begin a PhD.
+5. I genuinely enjoy the magic of computer vision and graphics, from computational photography to rendering. Their demos fascinate me, and I want to create some of that magic myself.
+
+If I leave my PhD program, I might no longer have to suffer through conference rejections. But I would also have to begin a job that, based on my brief internship at Alibaba, I might find somewhat boring. Industry work did not feel as creative to me as doing a PhD. So I still seem to have enough motivation to keep pursuing the degree.
+
+Okay, then I should continue improving my research skills and learn how to reduce the chance of rejection. But how can I make the process feel more manageable—and perhaps even enjoyable?
