@@ -1,6 +1,6 @@
 ---
 title: "How to Feel Confident About Your Research"
-date: "2026-07-22"
+date: "2026-07-23"
 summary: "A reflection on confidence and doubt in research."
 tags:
   - notes
@@ -19,3 +19,21 @@ About 80 percent of the time, I feel that my research is meaningless and makes n
 5. I lack the necessary hardware, and I do not enjoy running complex real-world experiments. I felt this struggle clearly while working on optical-tolerance projects.
 
 For some combination of these reasons, I sometimes come to dislike my research and struggle to find any meaning in it. When that happens, I stop writing and simply wait.
+
+## A painful streak in my research journey
+
+Today I received the reviews for my NeurIPS 2026 submission. The initial ratings are:
+
+- 2 (Reject)
+- 3 (Borderline reject)
+- 2 (Reject)
+
+At this point, I expect the final decision to be a **rejection**. Another miserable day in my research journey, lol. Since shifting my research focus from _optical computing_ to _computer vision_, I have accumulated the following sequence of rejections:
+
+> 1. _Tolerance Optics_ — rejected by CVPR 2025.
+> 2. _Tolerance Optics_ — rejected by ICCP 2025.
+> 3. _Event3D_ — rejected by CVPR 2026.
+> 4. _Event3D_ — withdrawn from ECCV 2026 after receiving no positive ratings.
+> 5. _Event3D_ — likely to be withdrawn from NeurIPS 2026 after receiving no positive ratings.
+
+If NeurIPS ends as I expect, it will mark five consecutive unsuccessful submissions, and the streak may continue. Put differently, I have not had a paper accepted at a so-called top-tier computer vision conference in two years—nearly three.
