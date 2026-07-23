@@ -1,12 +1,13 @@
 ---
-title: "How to be confident for your research?"
+title: "How to Feel Confident About Your Research"
 date: "2026-07-22"
-summary: "A blog to discuss the confidence about our research"
+summary: "A reflection on confidence and doubt in research."
 tags:
   - notes
 ---
 
-As a junior PhD student, I eager to conduct impactful and fruitful research projects every time when I start a new project. However, I feel disappointed and frustrating when I start to write the paper and prepare to submit my new baked paper to these prestigious conferences. So, why does this loop continue happen time after time? I didn't learn any lesson will be the only reason? I try to figure out and make a note here.
+As a junior PhD student, I begin every project hoping to produce work that is both impactful and fruitful. Yet when it is time to write the paper and prepare a submission to a prestigious conference, I often find myself disappointed and frustrated. Why does this cycle repeat itself? Is it simply because I failed to learn from the last time? I am writing this note as an attempt to understand the pattern.
 
-## A typical loop for my research projects
+## A typical loop in my research
 
+Sometimes, I come to dislike my research and struggle to find any meaning in it. When that happens, I stop writing and simply wait.
