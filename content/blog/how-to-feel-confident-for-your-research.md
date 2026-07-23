@@ -48,7 +48,7 @@ These past and ongoing failures also cause enormous emotional fluctuations in my
 4. "I should produce better work in every respect—_writing_, _figures_, _rebuttals_, everything."
 5. "I am embarrassed that I have been rejected by so many conferences and have so few research outcomes."
 6. "I increasingly expect my current projects to be rejected as well, simply because I am the one conducting them."
-7. "I can't find a good internship during the summer since no good outcome!"
+7. "I will not find a good summer internship because I do not have any strong research outcomes."
 
 The list feels endless. Yet most of these thoughts are negative and offer nothing useful for the rest of my research journey. Worse, they directly harm my ongoing projects. Sometimes I stop working on research for days—or even months.
 
@@ -69,4 +69,16 @@ So, what should I do next—leave my PhD program, or keep suffering, keep improv
 
 If I leave my PhD program, I might no longer have to suffer through conference rejections. But I would also have to begin a job that, based on my brief internship at Alibaba, I might find somewhat boring. Industry work did not feel as creative to me as doing a PhD. So I still seem to have enough motivation to keep pursuing the degree.
 
-Okay, then I should continue improving my research skills and learn how to reduce the chance of rejection. But how can I make the process feel more manageable—and perhaps even enjoyable?
+Okay, then I should continue improving my research skills and learn how to reduce the chance of rejection. But how can I make the process feel more manageable—and perhaps even enjoyable? Let's compare point by point:
+
+| Negative thought | How to respond |
+| --- | --- |
+| I need to publish quickly, even if it means producing a "trash paper." | Yes—as quickly as possible, but without sacrificing solidity. After all, two publications a year would be good enough. |
+| I am bad at research and should quit my PhD. | Relax. I may not be good at research yet, but that is exactly why I need to keep learning rather than expecting myself to be ready immediately. |
+| I am worse than other PhD students. | I do not need to compare myself with others. I only need to keep improving; learning is the ultimate goal. |
+| Every part of my work—writing, figures, and rebuttals—must be better. | Improvement matters, but it can happen gradually. The goal is to keep raising the overall quality of my research, not to become perfect overnight. |
+| I am embarrassed by repeated rejections and limited research outcomes. | There is nothing to be embarrassed about. Isn't this at least a good story to share with my labmates? |
+| My current projects will be rejected simply because I am the one conducting them. | Fuck it. I will make the project as strong as possible—and then see how many rejections I can collect. |
+| I will not find a good summer internship because I have no strong research outcomes. | Then I will stay at school, keep working, and prepare for the next "rejection." |
+
+The most important thing is to **keep improving the quality of my research**, remain **optimistic**, and **continue finding joy in the work**.

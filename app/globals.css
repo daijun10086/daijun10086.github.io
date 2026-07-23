@@ -354,6 +354,32 @@ a:hover {
   padding-left: 2px;
 }
 
+.article-body table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 0.94em;
+}
+
+.article-body th,
+.article-body td {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-body th {
+  background: var(--code);
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.article-body th:first-child,
+.article-body td:first-child {
+  width: 54%;
+}
+
 .article-body blockquote {
   margin-left: 25px;
   padding-left: 18px;

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 import { SiteFooter, SiteHeader } from "../../components/SiteChrome";
 import { getPost, posts } from "../../../content/posts";
 
@@ -70,7 +71,11 @@ export default async function WritingPage({ params }: PageProps) {
           </header>
 
           <div className="article-body">
-            <ReactMarkdown rehypePlugins={[rehypeRaw]} urlTransform={transformContentUrl}>
+            <ReactMarkdown
+              rehypePlugins={[rehypeRaw]}
+              remarkPlugins={[remarkGfm]}
+              urlTransform={transformContentUrl}
+            >
               {post.body}
             </ReactMarkdown>
           </div>
