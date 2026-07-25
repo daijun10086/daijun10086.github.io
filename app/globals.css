@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&family=Ubuntu+Mono:wght@400;700&display=swap");
 
 :root {
+  --font-serif: "Crimson Text", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-code: "Ubuntu Mono", ui-monospace, monospace;
   --background: #fff8ec;
   --text: #24180f;
   --primary: #8a541c;
@@ -41,7 +44,7 @@ body {
   padding: 0;
   background: var(--background);
   color: var(--text);
-  font: 21px/26px "Crimson Text", Georgia, serif;
+  font: 21px/26px var(--font-serif);
   font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -128,7 +131,7 @@ a:hover {
   background: transparent;
   color: var(--faded);
   cursor: pointer;
-  font: 10px/15px "Ubuntu Mono", ui-monospace, monospace;
+  font: 12px/15px var(--font-serif);
   opacity: 0.68;
   text-transform: lowercase;
 }
@@ -177,7 +180,7 @@ a:hover {
 .article-body h2,
 .article-body h3 {
   color: var(--heading);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
 }
 
@@ -205,7 +208,7 @@ a:hover {
 .post-main h3 {
   display: inline;
   margin: 0;
-  font-family: "Crimson Text", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 21px;
   font-weight: 400;
   line-height: 25px;
@@ -225,8 +228,8 @@ a:hover {
   flex-wrap: wrap;
   gap: 13px;
   margin-top: 3px;
-  font-family: "Ubuntu Mono", ui-monospace, monospace;
-  font-size: 12px;
+  font-family: var(--font-serif);
+  font-size: 15px;
   line-height: 18px;
   text-transform: lowercase;
 }
@@ -276,8 +279,8 @@ a:hover {
   display: inline-block;
   margin: 5px 0 28px;
   color: var(--faded);
-  font-family: "Ubuntu Mono", ui-monospace, monospace;
-  font-size: 12px;
+  font-family: var(--font-serif);
+  font-size: 15px;
   text-decoration: none;
   text-transform: lowercase;
 }
@@ -395,7 +398,7 @@ a:hover {
 .article-body code {
   padding: 0 3px;
   background: var(--code);
-  font-family: "Ubuntu Mono", ui-monospace, monospace;
+  font-family: var(--font-code);
   font-size: 0.88em;
 }
 
@@ -426,15 +429,15 @@ a:hover {
 }
 
 .media-placeholder span {
-  font-family: "Ubuntu Mono", ui-monospace, monospace;
-  font-size: 12px;
+  font-family: var(--font-serif);
+  font-size: 15px;
 }
 
 .media-placeholder strong {
   display: block;
   max-width: 420px;
   margin-top: 4px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 26px;
   font-weight: 400;
   line-height: 1.25;
