@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import "@fontsource-variable/newsreader/opsz.css";
+import "@fontsource-variable/newsreader/opsz-italic.css";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://daijun-research-notes.jundai332.chatgpt.site";

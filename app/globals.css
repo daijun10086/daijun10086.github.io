@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Ubuntu+Mono:wght@400;700&display=swap");
-
 :root {
-  --font-serif: "Newsreader", Georgia, serif;
-  --font-display: "Newsreader", Georgia, serif;
-  --font-code: "Ubuntu Mono", ui-monospace, monospace;
+  --font-serif: "Newsreader Variable", Georgia, serif;
+  --font-display: "Newsreader Variable", Georgia, serif;
+  --font-code: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --background: #fff8ec;
   --text: #24180f;
   --primary: #8a541c;
