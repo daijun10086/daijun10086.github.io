@@ -277,8 +277,20 @@ a:hover {
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--border);
+  border-radius: 12px;
   background: var(--code);
   box-shadow: 0 7px 20px var(--photo-shadow);
+}
+
+.about-photo::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 35%;
+  background: linear-gradient(to top, rgb(0 0 0 / 58%), transparent);
+  content: "";
+  pointer-events: none;
 }
 
 .about-photo img {
@@ -286,6 +298,19 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.about-photo figcaption {
+  position: absolute;
+  right: 10px;
+  bottom: 9px;
+  left: 10px;
+  z-index: 1;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.25;
+  text-align: center;
+  text-shadow: 0 1px 4px rgb(0 0 0 / 75%);
 }
 
 .about-gallery[data-count="1"] {

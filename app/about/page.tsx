@@ -10,26 +10,36 @@ type AboutPhoto = {
 
 const aboutPhotos: AboutPhoto[] = [
   {
-    src: "/assets/about-images/myself.jpg",
+    src: "/assets/about-images/Me.jpg",
     alt: "Dai-Jun visiting a temple",
     position: "center 58%",
   },
   {
-    src: "/assets/about-images/girl_friend.jpg",
+    src: "/assets/about-images/My-Girl-Friend.jpg",
     alt: "A winter trip",
     position: "center 48%",
   },
   {
-    src: "/assets/about-images/me_with_cat.jpg",
+    src: "/assets/about-images/Me-with-DunCat.jpg",
     alt: "Dai-Jun with his cat",
     position: "center 36%",
   },
   {
-    src: "/assets/about-images/cat.jpg",
+    src: "/assets/about-images/DunCat.jpg",
     alt: "A close portrait of Dai-Jun's cat",
     position: "center 8%",
   },
 ];
+
+function getPhotoCaption(src: string) {
+  const filename = src.split("/").pop() ?? src;
+
+  return filename
+    .replace(/\.[^.]+$/, "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 export const metadata: Metadata = {
   title: "About",
@@ -71,6 +81,7 @@ export default function AboutPage() {
                   decoding="async"
                   style={{ objectPosition: photo.position ?? "center" }}
                 />
+                <figcaption>{getPhotoCaption(photo.src)}</figcaption>
               </figure>
             ))}
           </section>
