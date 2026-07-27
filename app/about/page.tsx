@@ -9,10 +9,26 @@ type AboutPhoto = {
 };
 
 const aboutPhotos: AboutPhoto[] = [
-  // Add three or four photos from public/assets/about-images here.
-  // Example:
-  // { src: "/assets/about-images/photo-1.jpg", alt: "Dai-Jun outdoors" },
-  // { src: "/assets/about-images/photo-2.jpg", alt: "Dai-Jun at work", position: "center 35%" },
+  {
+    src: "/assets/about-images/myself.jpg",
+    alt: "Dai-Jun visiting a temple",
+    position: "center 58%",
+  },
+  {
+    src: "/assets/about-images/girl_friend.jpg",
+    alt: "A winter trip",
+    position: "center 48%",
+  },
+  {
+    src: "/assets/about-images/me_with_cat.jpg",
+    alt: "Dai-Jun with his cat",
+    position: "center 36%",
+  },
+  {
+    src: "/assets/about-images/cat.jpg",
+    alt: "A close portrait of Dai-Jun's cat",
+    position: "center 8%",
+  },
 ];
 
 export const metadata: Metadata = {
