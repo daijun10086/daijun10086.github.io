@@ -16,3 +16,6 @@ How to get happy? A very counterintuitive answer is keep you are "painful", actu
   <img src="../../public/assets/blog/towards-happiness/zen.png" width="50%" />
   <figcaption>The Life of Zen - Keep Calm and Suffer</figcaption>
 </div>
+
+---
+As a PhD student, I enjoy the fun from [Research in Progress, or RIP in short](https://researchinprogress.tumblr.com/) so much!
