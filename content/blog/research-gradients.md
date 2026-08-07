@@ -6,6 +6,11 @@ tags:
   - notes
 ---
 
+<div align="center">
+  <img src="../../public/assets/blog/research-gradients/teaser.jpg" width="100%" />
+  <figcaption>Unprediction incurred by AI</figcaption>
+</div>
+
 AI is changing everything rapidly. As a PhD student whose work sits close to AI, I try to keep up with developments in models such as LLMs and agents. I am always a little afraid of falling behind in how effectively I work.
 
 Recently, I have begun thinking seriously about the main focus I should choose for the rest of my PhD journey. Computational photography or imaging? They no longer seem like the safest choices for finding a good job. The markets are relatively small and, I imagine, concentrated in a handful of mobile-device companies. Even within computational photography and imaging, generative techniques such as diffusion models and flow matching are appearing everywhere.
