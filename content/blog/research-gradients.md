@@ -7,8 +7,8 @@ tags:
 ---
 
 <div align="center">
-  <img src="../../public/assets/blog/research-gradients/teaser.jpg" width="100%" />
-  <figcaption>Unprediction incurred by AI</figcaption>
+  <img src="../../public/assets/blog/research-gradients/teaser.jpg" alt="Abstract gray clouds evoking uncertainty around AI" width="100%" />
+  <figcaption>The Uncertainty Brought About by AI</figcaption>
 </div>
 
 AI is changing everything rapidly. As a PhD student whose work sits close to AI, I try to keep up with developments in models such as LLMs and agents. I am always a little afraid of falling behind in how effectively I work.
