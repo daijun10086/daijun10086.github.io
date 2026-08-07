@@ -8,6 +8,7 @@
   --primary-hover: #a15f20;
   --heading: #5e3b18;
   --faded: #6e5d4b;
+  --caption: #77736e;
   --border: #dbc9ad;
   --code: #f1e4cf;
   --code-block: #fffdf8;
@@ -23,6 +24,7 @@
   --primary-hover: #e0aa73;
   --heading: #f3ece3;
   --faded: #9d9286;
+  --caption: #aaa6a1;
   --border: #332d28;
   --code: #1a1715;
   --code-block: #11100f;
@@ -546,11 +548,13 @@ a:hover {
   line-height: 1.25;
 }
 
+.article-body figcaption,
 .media-frame figcaption {
   margin-top: 5px;
-  color: var(--faded);
-  font-size: 14px;
+  color: var(--caption);
+  font-size: 13px;
   font-style: italic;
+  line-height: 1.4;
   text-align: center;
 }
 
