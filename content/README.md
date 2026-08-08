@@ -46,3 +46,25 @@ links:
   - label: PDF
     href: "/assets/research/my-project/paper.pdf"
 ```
+
+## Aisthesis 资源
+
+Aisthesis 页面上的资源统一放在 `content/aisthesis.ts`。新增资源时，在
+`aisthesisResources` 的方括号内复制并填写一个条目：
+
+```ts
+{
+  title: "Resource name",
+  href: "https://example.com",
+  category: "Photography",
+  note: "A short note about why I like this resource.",
+},
+```
+
+- `title`：页面上显示的资源名称。
+- `href`：点击标题后打开的链接。
+- `category`：显示在左侧的资源类别，例如 Photography、Film 或 Rendering。
+- `note`：你对这个资源的简短介绍或喜欢它的原因。
+
+资源会按照文件中的顺序显示。每个条目之间需要使用逗号分隔；只修改这个资源清单，
+不需要修改 `app/aisthesis/page.tsx` 或页面样式。

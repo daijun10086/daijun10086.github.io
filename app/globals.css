@@ -290,6 +290,15 @@ a:hover {
   list-style: none;
 }
 
+.aisthesis-empty {
+  margin: 0;
+  padding: 23px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  color: var(--faded);
+  font-style: italic;
+}
+
 .visual-resource {
   display: grid;
   grid-template-columns: 155px minmax(0, 1fr);

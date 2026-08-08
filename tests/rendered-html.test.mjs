@@ -60,10 +60,9 @@ test("renders Aisthesis as a visual resource collection", async () => {
   const html = await response.text();
 
   assert.match(html, /<h1 class="sr-only">Aisthesis<\/h1>/);
-  assert.match(html, /aria-current="page"[^>]*>aisthesis<\/a>/);
-  assert.match(html, /Favorite visual art resources/);
-  assert.match(html, /The Moon Camera/);
-  assert.match(html, /youtube\.com\/watch\?v=Ytkkl917paM/);
+  assert.match(html, /aria-current="page"[^>]*>Aisthesis<\/a>/);
+  assert.match(html, /This shelf is ready for its first entry\./);
+  assert.doesNotMatch(html, /The Moon Camera/);
 });
 
 test("renders blog as a separate page without previews", async () => {

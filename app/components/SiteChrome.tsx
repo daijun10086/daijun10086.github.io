@@ -25,7 +25,7 @@ export function SiteHeader({ current }: { current?: Section }) {
             blog
           </Link>
           <Link href="/aisthesis" aria-current={current === "aisthesis" ? "page" : undefined}>
-            aisthesis
+            Aisthesis
           </Link>
         </nav>
       </header>
