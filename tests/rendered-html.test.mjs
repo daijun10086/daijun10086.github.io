@@ -58,10 +58,19 @@ test("renders Aisthesis as a visual resource collection", async () => {
   const response = await render("/aisthesis");
   assert.equal(response.status, 200);
   const html = await response.text();
+  const resourceFiles = (await readdir(new URL("../content/aisthesis/", import.meta.url))).filter(
+    (file) => file.endsWith(".md") && !file.startsWith("_"),
+  );
 
   assert.match(html, /<h1 class="sr-only">Aisthesis<\/h1>/);
   assert.match(html, /aria-current="page"[^>]*>Aisthesis<\/a>/);
-  assert.match(html, /This shelf is ready for its first entry\./);
+  assert.equal((html.match(/<li class="visual-resource">/g) || []).length, resourceFiles.length);
+  if (resourceFiles.length === 0) {
+    assert.match(html, /This shelf is ready for its first entry\./);
+  } else {
+    assert.match(html, /Favorite visual art resources/);
+    assert.doesNotMatch(html, /This shelf is ready for its first entry\./);
+  }
   assert.doesNotMatch(html, /The Moon Camera/);
 });
 

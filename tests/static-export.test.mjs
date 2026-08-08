@@ -35,7 +35,18 @@ test("exports every primary page as a directory index", async () => {
   assert.match(about, /<h1 class="sr-only">About<\/h1>/);
   assert.match(research, /Beyond the Paper/);
   assert.match(aisthesis, /<h1 class="sr-only">Aisthesis<\/h1>/);
-  assert.match(aisthesis, /This shelf is ready for its first entry\./);
+  const aisthesisFiles = (await readdir(new URL("../content/aisthesis/", import.meta.url))).filter(
+    (file) => file.endsWith(".md") && !file.startsWith("_"),
+  );
+  assert.equal(
+    (aisthesis.match(/<li class="visual-resource">/g) || []).length,
+    aisthesisFiles.length,
+  );
+  if (aisthesisFiles.length === 0) {
+    assert.match(aisthesis, /This shelf is ready for its first entry\./);
+  } else {
+    assert.doesNotMatch(aisthesis, /This shelf is ready for its first entry\./);
+  }
   assert.doesNotMatch(aisthesis, /The Moon Camera/);
   for (const slug of await contentSlugs("blog")) {
     assert.ok(blog.includes(`/writing/${slug}/`));
