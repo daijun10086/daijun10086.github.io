@@ -21,16 +21,16 @@
 :root[data-theme="dark"] {
   --background: #090909;
   --text: #e9e2d8;
-  --primary: #a7bae1;
-  --primary-hover: #cad5eb;
-  --heading: #eef1f6;
-  --nav-current: #eef1f6;
+  --primary: #a8c7b0;
+  --primary-hover: #c8ddce;
+  --heading: #f0f1ef;
+  --nav-current: #f0f1ef;
   --faded: #9d9286;
   --caption: #aaa6a1;
   --border: #332d28;
   --code: #1a1715;
   --code-block: #11100f;
-  --logogram: #dce4f1;
+  --logogram: #dde5df;
   --photo-shadow: rgba(0, 0, 0, 0.52);
   color-scheme: dark;
 }
