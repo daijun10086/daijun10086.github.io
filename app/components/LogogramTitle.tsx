@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 type LogogramTitleProps = {
-  word: "research" | "blog" | "about";
+  word: "research" | "blog" | "about" | "aisthesis";
 };
 
 type Particle = {
@@ -24,6 +24,7 @@ const wordLabels = {
   research: "Research",
   blog: "Blog",
   about: "About",
+  aisthesis: "Aisthesis",
 } as const;
 
 function hashWord(word: string) {

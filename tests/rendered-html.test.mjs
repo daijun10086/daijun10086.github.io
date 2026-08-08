@@ -45,7 +45,25 @@ test("renders research as a focused standalone page", async () => {
   const aboutPosition = html.indexOf('href="/about"');
   const researchPosition = html.indexOf('href="/research"', aboutPosition + 1);
   const blogPosition = html.indexOf('href="/blog"');
-  assert.ok(aboutPosition >= 0 && aboutPosition < researchPosition && researchPosition < blogPosition);
+  const aisthesisPosition = html.indexOf('href="/aisthesis"');
+  assert.ok(
+    aboutPosition >= 0 &&
+      aboutPosition < researchPosition &&
+      researchPosition < blogPosition &&
+      blogPosition < aisthesisPosition,
+  );
+});
+
+test("renders Aisthesis as a visual resource collection", async () => {
+  const response = await render("/aisthesis");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /<h1 class="sr-only">Aisthesis<\/h1>/);
+  assert.match(html, /aria-current="page"[^>]*>aisthesis<\/a>/);
+  assert.match(html, /Favorite visual art resources/);
+  assert.match(html, /The Moon Camera/);
+  assert.match(html, /youtube\.com\/watch\?v=Ytkkl917paM/);
 });
 
 test("renders blog as a separate page without previews", async () => {

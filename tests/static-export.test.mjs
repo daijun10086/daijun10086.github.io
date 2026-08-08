@@ -18,11 +18,12 @@ async function contentSlugs(kind) {
 }
 
 test("exports every primary page as a directory index", async () => {
-  const [home, about, research, blog] = await Promise.all([
+  const [home, about, research, blog, aisthesis] = await Promise.all([
     outputFile("index.html"),
     outputFile("about/index.html"),
     outputFile("research/index.html"),
     outputFile("blog/index.html"),
+    outputFile("aisthesis/index.html"),
   ]);
 
   assert.match(home, /<h1 class="sr-only">About<\/h1>/);
@@ -33,6 +34,8 @@ test("exports every primary page as a directory index", async () => {
   assert.match(home, /tab-logo\.svg/);
   assert.match(about, /<h1 class="sr-only">About<\/h1>/);
   assert.match(research, /Beyond the Paper/);
+  assert.match(aisthesis, /<h1 class="sr-only">Aisthesis<\/h1>/);
+  assert.match(aisthesis, /The Moon Camera/);
   for (const slug of await contentSlugs("blog")) {
     assert.ok(blog.includes(`/writing/${slug}/`));
   }

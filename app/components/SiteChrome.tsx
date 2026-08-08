@@ -2,7 +2,7 @@ import Link from "next/link";
 import { LogogramTitle } from "./LogogramTitle";
 import { ThemeControl } from "./ThemeControl";
 
-type Section = "research" | "blog" | "about";
+type Section = "research" | "blog" | "about" | "aisthesis";
 
 export function SiteHeader({ current }: { current?: Section }) {
   const activeSection = current || "about";
@@ -23,6 +23,9 @@ export function SiteHeader({ current }: { current?: Section }) {
           </Link>
           <Link href="/blog" aria-current={current === "blog" ? "page" : undefined}>
             blog
+          </Link>
+          <Link href="/aisthesis" aria-current={current === "aisthesis" ? "page" : undefined}>
+            aisthesis
           </Link>
         </nav>
       </header>
