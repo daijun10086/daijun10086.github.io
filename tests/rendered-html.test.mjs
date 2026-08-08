@@ -90,13 +90,15 @@ test("maps Markdown-preview public paths to deployed asset URLs", async () => {
   assert.doesNotMatch(html, /src="\.\.\/\.\.\/public\/assets\//);
 });
 
-test("builds one shared article system from individual Markdown files", async () => {
-  const [content, generator, articleTemplate, blogFiles, researchFiles] = await Promise.all([
+test("builds one shared content system from individual Markdown files", async () => {
+  const [content, generator, articleTemplate, blogFiles, researchFiles, aisthesisFiles] =
+    await Promise.all([
     readFile(new URL("../content/posts.ts", import.meta.url), "utf8"),
     readFile(new URL("../scripts/generate-posts.mjs", import.meta.url), "utf8"),
     readFile(new URL("../app/writing/[slug]/page.tsx", import.meta.url), "utf8"),
     readdir(new URL("../content/blog/", import.meta.url)),
     readdir(new URL("../content/research/", import.meta.url)),
+    readdir(new URL("../content/aisthesis/", import.meta.url)),
   ]);
 
   assert.match(content, /export const posts/);
@@ -104,6 +106,9 @@ test("builds one shared article system from individual Markdown files", async ()
   assert.match(generator, /gray-matter/);
   assert.ok(blogFiles.some((file) => file.endsWith(".md") && !file.startsWith("_")));
   assert.ok(researchFiles.some((file) => file.endsWith(".md") && !file.startsWith("_")));
+  assert.ok(aisthesisFiles.includes("_template.md"));
+  assert.match(content, /aisthesisResources/);
+  assert.match(generator, /readAisthesisResources/);
   assert.match(articleTemplate, /<ReactMarkdown/);
   assert.match(articleTemplate, /getPost\(slug\)/);
 });

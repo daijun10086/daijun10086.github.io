@@ -49,22 +49,35 @@ links:
 
 ## Aisthesis 资源
 
-Aisthesis 页面上的资源统一放在 `content/aisthesis.ts`。新增资源时，在
-`aisthesisResources` 的方括号内复制并填写一个条目：
+Aisthesis 和 Blog、Research 使用相同的“一条内容 = 一个 Markdown 文件”结构。资源文件放在：
 
-```ts
-{
-  title: "Resource name",
-  href: "https://example.com",
-  category: "Photography",
-  note: "A short note about why I like this resource.",
-},
+```text
+content/aisthesis/
+```
+
+新增资源时，复制 `content/aisthesis/_template.md`，并将副本改成小写英文文件名，例如：
+
+```text
+content/aisthesis/my-favorite-resource.md
+```
+
+每个资源文件的格式如下：
+
+```md
+---
+title: "Resource Name"
+href: "https://example.com"
+category: "Photography"
+date: "2026-08-08"
+---
+
+Write a short note about this resource and why you like it.
 ```
 
 - `title`：页面上显示的资源名称。
-- `href`：点击标题后打开的链接。
+- `href`：点击标题后打开的外部链接，必须以 `http://` 或 `https://` 开头。
 - `category`：显示在左侧的资源类别，例如 Photography、Film 或 Rendering。
-- `note`：你对这个资源的简短介绍或喜欢它的原因。
+- `date`：添加日期，使用 `YYYY-MM-DD`；较新的资源自动排在前面。
+- 正文：你对这个资源的简短介绍或喜欢它的原因。
 
-资源会按照文件中的顺序显示。每个条目之间需要使用逗号分隔；只修改这个资源清单，
-不需要修改 `app/aisthesis/page.tsx` 或页面样式。
+构建网站时会自动扫描该目录。Aisthesis 只把资源汇总成列表，不会为每条资源生成站内详情页。

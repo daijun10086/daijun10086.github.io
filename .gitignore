@@ -41,5 +41,5 @@ next-env.d.ts
 /outputs/
 /work/
 
-# generated from the Markdown files in content/blog and content/research
+# generated from the Markdown files in content/blog, content/research, and content/aisthesis
 /content/posts.generated.ts

@@ -16,3 +16,13 @@ export type Post = {
   links?: ResourceLink[];
   body: string;
 };
+
+export type AisthesisResource = {
+  slug: string;
+  date: string;
+  displayDate: string;
+  title: string;
+  href: string;
+  category: string;
+  note: string;
+};

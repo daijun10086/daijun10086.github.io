@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { aisthesisResources } from "../../content/aisthesis";
+import { aisthesisResources } from "../../content/posts";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 
 export const metadata: Metadata = {
