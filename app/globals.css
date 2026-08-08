@@ -303,7 +303,7 @@ a:hover {
   display: grid;
   grid-template-columns: 155px minmax(0, 1fr);
   gap: 25px;
-  padding: 23px 0 25px;
+  padding: 18px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -315,20 +315,41 @@ a:hover {
   line-height: 1.3;
 }
 
+.visual-resource-bookmark {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--code-block);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.visual-resource-bookmark.has-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  min-height: 120px;
+}
+
+.visual-resource-bookmark:hover {
+  border-color: var(--primary);
+  color: var(--text);
+  box-shadow: 0 5px 16px var(--photo-shadow);
+}
+
+.visual-resource-main {
+  min-width: 0;
+  padding: 14px 16px 13px;
+}
+
 .visual-resource-main h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 27px;
+  font-size: 25px;
   font-weight: 400;
   line-height: 1.15;
-}
-
-.visual-resource-main h2 a {
-  text-decoration: none;
-}
-
-.visual-resource-main h2 a:hover {
-  text-decoration: underline;
 }
 
 .visual-resource-main h2 span {
@@ -339,7 +360,32 @@ a:hover {
 
 .visual-resource-main p {
   margin: 8px 0 0;
+  font-size: 17px;
   line-height: 1.45;
+}
+
+.visual-resource-domain {
+  display: block;
+  margin-top: 10px;
+  overflow: hidden;
+  color: var(--faded);
+  font: 13px/1.2 var(--font-code);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.visual-resource-preview {
+  min-width: 0;
+  overflow: hidden;
+  border-left: 1px solid var(--border);
+  background: var(--code);
+}
+
+.visual-resource-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-gallery {
@@ -719,6 +765,17 @@ a:hover {
 
   .visual-resource-category {
     margin-top: 0;
+  }
+
+  .visual-resource-bookmark.has-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-resource-preview {
+    order: -1;
+    aspect-ratio: 16 / 7;
+    border-bottom: 1px solid var(--border);
+    border-left: 0;
   }
 
   .about-gallery {

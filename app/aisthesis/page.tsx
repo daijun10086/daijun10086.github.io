@@ -27,15 +27,28 @@ export default function AisthesisPage() {
             {aisthesisResources.map((resource) => (
               <li className="visual-resource" key={resource.href}>
                 <p className="visual-resource-category">{resource.category}</p>
-                <div className="visual-resource-main">
-                  <h2>
-                    <a href={resource.href} target="_blank" rel="noreferrer">
+                <a
+                  className={`visual-resource-bookmark${resource.previewImage ? " has-preview" : ""}`}
+                  href={resource.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="visual-resource-main">
+                    <h2>
                       {resource.title}
                       <span aria-hidden="true"> ↗</span>
-                    </a>
-                  </h2>
-                  <p>{resource.note}</p>
-                </div>
+                    </h2>
+                    <p>{resource.note}</p>
+                    <span className="visual-resource-domain">
+                      {new URL(resource.href).hostname.replace(/^www\./, "")}
+                    </span>
+                  </div>
+                  {resource.previewImage ? (
+                    <span className="visual-resource-preview" aria-hidden="true">
+                      <img src={resource.previewImage} alt="" loading="lazy" decoding="async" />
+                    </span>
+                  ) : null}
+                </a>
               </li>
             ))}
           </ol>

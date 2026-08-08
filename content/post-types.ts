@@ -24,5 +24,6 @@ export type AisthesisResource = {
   title: string;
   href: string;
   category: string;
+  previewImage?: string;
   note: string;
 };

@@ -73,6 +73,13 @@ function requireExternalUrl(value, field, fileName) {
   return href;
 }
 
+function optionalPreviewUrl(value, fileName) {
+  if (value === undefined || value === null || value === "") return undefined;
+  const preview = requireText(value, "preview", fileName);
+  if (preview.startsWith("/")) return preview;
+  return requireExternalUrl(preview, "preview", fileName);
+}
+
 async function readSection(kind) {
   const directory = new URL(`${kind}/`, contentRoot);
   const entries = await readdir(directory, { withFileTypes: true });
@@ -142,6 +149,7 @@ async function readAisthesisResources() {
         title: requireText(data.title, "title", fileName),
         href: requireExternalUrl(data.href, "href", fileName),
         category: requireText(data.category, "category", fileName),
+        previewImage: optionalPreviewUrl(data.preview, fileName),
         note: content.trim(),
       };
 
@@ -149,6 +157,7 @@ async function readAisthesisResources() {
         throw new Error(`${fileName}: resource note cannot be empty`);
       }
 
+      if (!resource.previewImage) delete resource.previewImage;
       return resource;
     }),
   );

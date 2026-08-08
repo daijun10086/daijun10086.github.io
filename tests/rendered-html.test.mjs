@@ -70,6 +70,7 @@ test("renders Aisthesis as a visual resource collection", async () => {
   } else {
     assert.match(html, /Favorite visual art resources/);
     assert.doesNotMatch(html, /This shelf is ready for its first entry\./);
+    assert.match(html, /visual-resource-bookmark/);
   }
   assert.doesNotMatch(html, /The Moon Camera/);
 });

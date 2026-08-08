@@ -69,6 +69,7 @@ title: "Resource Name"
 href: "https://example.com"
 category: "Photography"
 date: "2026-08-08"
+preview: "https://example.com/preview.jpg"
 ---
 
 Write a short note about this resource and why you like it.
@@ -78,6 +79,8 @@ Write a short note about this resource and why you like it.
 - `href`：点击标题后打开的外部链接，必须以 `http://` 或 `https://` 开头。
 - `category`：显示在左侧的资源类别，例如 Photography、Film 或 Rendering。
 - `date`：添加日期，使用 `YYYY-MM-DD`；较新的资源自动排在前面。
+- `preview`：可选的网站预览图片地址；可以使用网站的 Open Graph 图片或站内 `/assets/` 图片。
 - 正文：你对这个资源的简短介绍或喜欢它的原因。
 
 构建网站时会自动扫描该目录。Aisthesis 只把资源汇总成列表，不会为每条资源生成站内详情页。
+填写 `preview` 时会显示类似 Notion bookmark 的预览卡；省略该字段时则显示纯文字卡片。
