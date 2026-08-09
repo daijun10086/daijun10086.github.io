@@ -27,7 +27,7 @@ Most people do not own a DAVIS sensor. They own a smartphone, a RealSense, or a 
 Our answer is AsyncEvGS: a pipeline that pairs a 1280×720 Prophesee event camera with an iPhone 13 RGB camera, feeds both into a Visual Geometry Transformer for cross-domain pose estimation, and optimizes a 3D Gaussian Splatting representation with a suite of purpose-built losses.
 
 <div align="center">
-  <img src="../../public/assets/research/async-evgs/teaser.png" width="85%" alt="AsyncEvGS teaser" />
+  <img src="../../public/assets/research/async-evgs/Teaser.png" width="85%" alt="AsyncEvGS teaser" />
   <figcaption>High-quality 3D reconstruction from severely blurred handheld inputs</figcaption>
 </div>
 
