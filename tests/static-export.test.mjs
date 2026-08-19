@@ -33,6 +33,11 @@ test("exports every primary page as a directory index", async () => {
   assert.match(home, /rel="icon"/);
   assert.match(home, /tab-logo\.svg/);
   assert.match(about, /<h1 class="sr-only">About<\/h1>/);
+  assert.match(about, /id="about-links-title">Links<\/h2>/);
+  assert.match(about, /dai-jun-cv-of-failure-template\.pdf/);
+  assert.match(about, /href="https:\/\/github\.com\/daijun10086"/);
+  assert.match(about, /<span class="about-link-name">CV<\/span>/);
+  assert.match(about, /<span class="about-link-detail">coming soon<\/span>/);
   assert.match(research, /Beyond the Paper/);
   assert.match(aisthesis, /<h1 class="sr-only">Aisthesis<\/h1>/);
   const aisthesisFiles = (await readdir(new URL("../content/aisthesis/", import.meta.url))).filter(
@@ -68,4 +73,5 @@ test("pre-renders writing routes and GitHub Pages support files", async () => {
   await access(new URL("og-v3.png", output));
   await access(new URL("tab-logo.svg", output));
   await access(new URL("assets/blog/towards-happiness/zen.png", output));
+  await access(new URL("documents/dai-jun-cv-of-failure-template.pdf", output));
 });

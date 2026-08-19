@@ -100,6 +100,19 @@ test("maps Markdown-preview public paths to deployed asset URLs", async () => {
   assert.doesNotMatch(html, /src="\.\.\/\.\.\/public\/assets\//);
 });
 
+test("renders the About resource links without broken placeholders", async () => {
+  const response = await render("/about");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /id="about-links-title">Links<\/h2>/);
+  assert.match(html, /href="\/documents\/dai-jun-cv-of-failure-template\.pdf"/);
+  assert.match(html, /href="https:\/\/github\.com\/daijun10086"/);
+  assert.match(html, /<span class="about-link-name">CV<\/span>/);
+  assert.match(html, /<span class="about-link-detail">coming soon<\/span>/);
+  assert.doesNotMatch(html, /href="\/documents\/dai-jun-cv\.pdf"/);
+});
+
 test("builds one shared content system from individual Markdown files", async () => {
   const [content, generator, articleTemplate, blogFiles, researchFiles, aisthesisFiles] =
     await Promise.all([
