@@ -86,6 +86,38 @@ export default function AboutPage() {
             ))}
           </section>
         ) : null}
+        <div className="about-divider about-links-divider" aria-hidden="true" />
+        <section className="about-links" aria-labelledby="about-links-title">
+          <h2 id="about-links-title">Links</h2>
+          <ul className="about-link-list">
+            <li className="about-link-unavailable">
+              <span className="about-link-name">CV</span>
+              <span className="about-link-detail">coming soon</span>
+            </li>
+            <li>
+              <Link
+                href="/documents/dai-jun-cv-of-failure-template.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="about-link-name">CV of Failure</span>
+                <span className="about-link-detail">PDF template</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://github.com/daijun10086" target="_blank" rel="noreferrer">
+                <span className="about-link-name">GitHub</span>
+                <span className="about-link-detail">code &amp; projects</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="mailto:jundai332@gmail.com">
+                <span className="about-link-name">Email</span>
+                <span className="about-link-detail">get in touch</span>
+              </Link>
+            </li>
+          </ul>
+        </section>
       </main>
       <SiteFooter />
     </>
