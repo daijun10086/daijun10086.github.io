@@ -479,6 +479,11 @@ button.publication-day[aria-pressed="true"] {
   margin: 0 0 15px;
 }
 
+.about-page .publication-calendar {
+  max-width: 610px;
+  margin: 33px 0 0;
+}
+
 .about-divider {
   width: 100%;
   margin: 31px 0 25px;

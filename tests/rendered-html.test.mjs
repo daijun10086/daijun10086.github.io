@@ -36,9 +36,7 @@ test("renders research as a focused standalone page", async () => {
   assert.match(html, /animated particle logogram/);
   assert.match(html, /Color theme/);
   assert.match(html, /Beyond the Paper/);
-  assert.match(html, /id="publication-calendar-title">Publishing history<\/h2>/);
-  assert.match(html, /Research and Blog · last 26 weeks/);
-  assert.match(html, /aria-label="Publication types"/);
+  assert.doesNotMatch(html, /id="publication-calendar-title"/);
   assert.match(html, />Project<\/a>/);
   assert.match(html, />PDF<\/a>/);
   assert.match(html, />Archive<\/a>/);
@@ -91,8 +89,7 @@ test("renders blog as a separate page without previews", async () => {
   for (const file of blogFiles) {
     assert.ok(html.includes(`/writing/${file.slice(0, -3)}`));
   }
-  assert.match(html, /id="publication-calendar-title">Publishing history<\/h2>/);
-  assert.match(html, /Research and Blog · last 26 weeks/);
+  assert.doesNotMatch(html, /id="publication-calendar-title"/);
   assert.doesNotMatch(html, /Recent entries|Academic thoughts/);
 });
 
@@ -111,6 +108,9 @@ test("renders the About resource links without broken placeholders", async () =>
   const html = await response.text();
 
   assert.match(html, /id="about-links-title">Links<\/h2>/);
+  assert.match(html, /id="publication-calendar-title">Publishing history<\/h2>/);
+  assert.match(html, /Research and Blog · last 26 weeks/);
+  assert.match(html, /aria-label="Publication types"/);
   assert.match(html, /href="\/documents\/dai-jun-cv-of-failure-template\.pdf"/);
   assert.match(html, /href="https:\/\/github\.com\/daijun10086"/);
   assert.match(html, /<span class="about-link-name">CV<\/span>/);

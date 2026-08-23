@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { publicationEntries } from "../../content/posts";
+import { PublicationCalendar } from "../components/PublicationCalendar";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 
 type AboutPhoto = {
@@ -65,6 +67,7 @@ export default function AboutPage() {
             <Link href="mailto:jundai332@gmail.com">jundai332@gmail.com</Link>
           </p>
         </div>
+        <PublicationCalendar entries={publicationEntries} />
         <div className="about-divider" aria-hidden="true" />
         {visiblePhotos.length > 0 ? (
           <section
