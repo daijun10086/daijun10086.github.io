@@ -17,6 +17,11 @@ export type Post = {
   body: string;
 };
 
+export type PublicationEntry = Pick<
+  Post,
+  "slug" | "kind" | "date" | "displayDate" | "title"
+>;
+
 export type AisthesisResource = {
   slug: string;
   date: string;

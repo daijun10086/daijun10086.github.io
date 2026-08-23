@@ -39,6 +39,9 @@ test("exports every primary page as a directory index", async () => {
   assert.match(about, /<span class="about-link-name">CV<\/span>/);
   assert.match(about, /<span class="about-link-detail">coming soon<\/span>/);
   assert.match(research, /Beyond the Paper/);
+  assert.match(research, /id="publication-calendar-title">Publishing history<\/h2>/);
+  assert.match(blog, /id="publication-calendar-title">Publishing history<\/h2>/);
+  assert.match(blog, /Research and Blog · last 26 weeks/);
   assert.match(aisthesis, /<h1 class="sr-only">Aisthesis<\/h1>/);
   const aisthesisFiles = (await readdir(new URL("../content/aisthesis/", import.meta.url))).filter(
     (file) => file.endsWith(".md") && !file.startsWith("_"),
