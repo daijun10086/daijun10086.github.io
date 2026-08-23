@@ -116,6 +116,9 @@ test("renders the About resource links without broken placeholders", async () =>
   assert.match(html, /<span class="about-link-name">CV<\/span>/);
   assert.match(html, /<span class="about-link-detail">coming soon<\/span>/);
   assert.doesNotMatch(html, /href="\/documents\/dai-jun-cv\.pdf"/);
+  assert.ok(
+    html.indexOf('id="publication-calendar-title"') > html.indexOf('id="about-links-title"'),
+  );
 });
 
 test("builds one shared content system from individual Markdown files", async () => {

@@ -67,7 +67,6 @@ export default function AboutPage() {
             <Link href="mailto:jundai332@gmail.com">jundai332@gmail.com</Link>
           </p>
         </div>
-        <PublicationCalendar entries={publicationEntries} />
         <div className="about-divider" aria-hidden="true" />
         {visiblePhotos.length > 0 ? (
           <section
@@ -121,6 +120,7 @@ export default function AboutPage() {
             </li>
           </ul>
         </section>
+        <PublicationCalendar entries={publicationEntries} />
       </main>
       <SiteFooter />
     </>

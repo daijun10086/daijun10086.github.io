@@ -40,6 +40,9 @@ test("exports every primary page as a directory index", async () => {
   assert.match(about, /<span class="about-link-detail">coming soon<\/span>/);
   assert.match(about, /id="publication-calendar-title">Publishing history<\/h2>/);
   assert.match(about, /Research and Blog · last 26 weeks/);
+  assert.ok(
+    about.indexOf('id="publication-calendar-title"') > about.indexOf('id="about-links-title"'),
+  );
   assert.match(research, /Beyond the Paper/);
   assert.doesNotMatch(research, /id="publication-calendar-title"/);
   assert.doesNotMatch(blog, /id="publication-calendar-title"/);
