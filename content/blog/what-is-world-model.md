@@ -26,9 +26,10 @@ From this perspective, there are several reasons to pursue intelligence that wor
 - We want a general AI model that can predict and interact with the real world, rather than a collection of isolated experts for depth estimation, optical flow, action prediction, and every other individual task. For example, we hope to build a robot that can drive like a human instead of simply combining many disconnected models.
 - We have an enormous amount of unstructured visual data, especially video. We want to understand whether a general AI model can emerge from these simple but abundant observations.
 
-![A comparison between the text-centric pipeline of a large language model and the native multimodal reasoning of a world model.](../../public/assets/blog/what-is-world-model/world-model-overview.png)
-
-*A world model aims to reason in the native modalities of the physical world and connect perception, prediction, and action.*
+<div align="center">
+  <img src="../../public/assets/blog/what-is-world-model/world-model-overview.png" alt="A comparison between the text-centric pipeline of a large language model and the native multimodal reasoning of a world model" width="100%" />
+  <figcaption>A world model aims to reason in the native modalities of the physical world and connect perception, prediction, and action.</figcaption>
+</div>
 
 ## Why are there so many definitions?
 
@@ -38,9 +39,10 @@ Because researchers come from different backgrounds, each community naturally de
 
 At the same time, I do not think world models will fully replace LLMs. Instead, I believe world models and LLMs will become two coherent and complementary parts of a higher level of AI.
 
-![A cyclist imagines an internal model of riding a bicycle.](../../public/assets/blog/what-is-world-model/world-model-comic.png)
-
-*An internal world model, illustrated in Scott McCloud's Understanding Comics.*
+<div align="center">
+  <img src="../../public/assets/blog/what-is-world-model/world-model-comic.png" alt="A cyclist imagines an internal model of riding a bicycle" width="50%" />
+  <figcaption>An internal world model, illustrated in Scott McCloud's Understanding Comics.</figcaption>
+</div>
 
 ### The perspective from 3D vision
 
