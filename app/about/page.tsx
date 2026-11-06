@@ -60,8 +60,10 @@ export default function AboutPage() {
           <p>
             I am Dai-Jun. I do research and engineering about{" "}
             <Link href="https://wandell.github.io/FOV-1995/">vision</Link> and{" "}
-            <Link href="https://en.wikipedia.org/wiki/Intelligence">intelligence</Link>, writing
-            about life and philosophy. Hoping for a better world and future.
+            <Link href="https://en.wikipedia.org/wiki/Intelligence">intelligence</Link>.
+            I’m currently interested in self-improving intelligence and informative
+            environments for agents. I also write about life and philosophy.
+            Hoping for a better world and future.
           </p>
           <p>
             <Link href="mailto:jundai332@gmail.com">jundai332@gmail.com</Link>
