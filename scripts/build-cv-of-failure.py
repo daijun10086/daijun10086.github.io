@@ -266,7 +266,7 @@ def build_pdf(source: Path, output: Path) -> None:
     from pypdf import PdfReader
 
     def make_story() -> list[Flowable]:
-        label = escape(data.metadata.get("Label", "CV OF FAILURE - TEMPLATE"))
+        label = escape(data.metadata.get("Label", "CV OF FAILURE"))
         header_left = [
             Paragraph(label, styles["label"]),
             Paragraph(escape(data.name), styles["name"]),
@@ -322,9 +322,9 @@ def build_pdf(source: Path, output: Path) -> None:
         doc = BaseDocTemplate(
             str(destination),
             pagesize=A4,
-            title=f"{data.name} - CV of Failure Template",
+            title=f"{data.name} - CV of Failure",
             author=data.name,
-            subject="An editable CV of Failure template",
+            subject="A record of attempts that did not work out",
             creator="Dai-Jun's personal website",
             leftMargin=MARGIN_X,
             rightMargin=MARGIN_X,
